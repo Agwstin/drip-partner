@@ -1,0 +1,60 @@
+diff --git a/node_modules/react-native-udp/android/build.gradle b/node_modules/react-native-udp/android/build.gradle
+index 45247c7..ad183a3 100644
+--- a/node_modules/react-native-udp/android/build.gradle
++++ b/node_modules/react-native-udp/android/build.gradle
+@@ -1,4 +1,8 @@
+-// android/build.gradle
++// android/build.gradle — parcheado para Gradle 7+/AGP moderno (ver patches/)
++
++def safeExtGet(prop, fallback) {
++    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
++}
+ 
+ buildscript {
+     // The Android Gradle plugin is only required when opening the android folder stand-alone.
+@@ -7,28 +11,27 @@ buildscript {
+     if (project == rootProject) {
+         repositories {
+             google()
+-            jcenter()
++            mavenCentral()
+         }
+         dependencies {
+-            classpath 'com.android.tools.build:gradle:3.5.3'
++            classpath 'com.android.tools.build:gradle:4.2.2'
+         }
+     }
+ }
+ 
+ apply plugin: 'com.android.library'
+-apply plugin: 'maven'
+ 
+-def DEFAULT_COMPILE_SDK_VERSION = 28
+-def DEFAULT_BUILD_TOOLS_VERSION = "28.0.3"
+-def DEFAULT_TARGET_SDK_VERSION = 28
++def DEFAULT_COMPILE_SDK_VERSION = 34
++def DEFAULT_BUILD_TOOLS_VERSION = "34.0.0"
++def DEFAULT_TARGET_SDK_VERSION = 34
+ 
+ android {
+-    compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
+-    buildToolsVersion rootProject.hasProperty('buildToolsVersion') ? rootProject.buildToolsVersion : DEFAULT_BUILD_TOOLS_VERSION
++    compileSdkVersion safeExtGet('compileSdkVersion', DEFAULT_COMPILE_SDK_VERSION)
++    buildToolsVersion safeExtGet('buildToolsVersion', DEFAULT_BUILD_TOOLS_VERSION)
+ 
+     defaultConfig {
+         minSdkVersion 16
+-        targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : DEFAULT_TARGET_SDK_VERSION
++        targetSdkVersion safeExtGet('targetSdkVersion', DEFAULT_TARGET_SDK_VERSION)
+         versionCode 1
+         versionName "0.2.0"
+     }
+@@ -57,7 +60,7 @@ repositories {
+         url "$rootDir/../node_modules/jsc-android/dist"
+     }
+     google()
+-    jcenter()
++    mavenCentral()
+ }
+ 
+ 

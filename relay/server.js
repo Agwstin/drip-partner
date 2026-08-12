@@ -53,6 +53,7 @@ function readBody(req, limit = 2 * 1024 * 1024) {
 }
 
 const server = http.createServer(async (req, res) => {
+  console.log('[relay]', req.method, req.url)
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`)
   const cors = {
     'Access-Control-Allow-Origin': '*',

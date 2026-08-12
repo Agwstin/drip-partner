@@ -17,10 +17,12 @@ import {
   partnerIdentityObservable,
   partnerPeerObservable,
   partnerBlobObservable,
+  partnerRelayObservable,
   initPartnerStorage,
   savePartnerIdentity,
   savePartnerPeer,
   savePartnerBlob,
+  savePartnerRelay,
 } from '../../../lib/partner-storage'
 import { normalizeCycles, phaseProfiles, symptomCorrelations, worstSymptomDays, generateInsights } from '../../../lib/partner-insights'
 import { buildSharePayload } from '../../../lib/partner-share'
@@ -61,6 +63,7 @@ const Partner = () => {
     partnerBlobObservable((blob) => {
       if (blob) setBlobInput(blob.encrypted)
     })
+    partnerRelayObservable(setRelayUrl)
   }, [])
 
   const handleGenerateIdentity = async () => {
@@ -368,7 +371,10 @@ const Partner = () => {
           <AppTextInput
             autoCapitalize="none"
             autoCorrect={false}
-            onChangeText={setRelayUrl}
+            onChangeText={(text) => {
+              setRelayUrl(text)
+              savePartnerRelay(text)
+            }}
             placeholder="https://relay.midominio.com"
             style={styles.input}
             value={relayUrl}
