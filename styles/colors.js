@@ -10,28 +10,37 @@ const shadesOfViolet = ['#c4abce', '#8a579d', violet] // light to dark
 const pink = '#d10070'
 const shadesOfPink = ['#f0abd0', '#e157a1', pink] // light to dark
 const lightGreen = '#bccd67'
-const orange = '#bc6642'
 const mint = '#6ca299'
-const turquoiseDark = '#69CBC1'
+
+// ---------------------------------------------------------------------------
+// Paleta "drip feminino" — inspirada en Flo y Clue (blush, rosa, coral).
+// El theming está centralizado: redefinir estas variables re-pinta toda la app.
+// ---------------------------------------------------------------------------
+const blush = '#FDF2F6' // fondo de páginas (antes turquoiseLight verdoso)
+const rose = '#C2185B' // primario: rosa frambuesa profundo (antes purple)
+const roseLight = '#E87DA3' // secundario sobre fondo oscuro (antes purpleLight)
+const coral = '#FF5C8A' // acento / CTA (antes naranja)
+const rosePale = '#F8BBD0' // texto sobre fondo oscuro (antes turquoise)
+const roseMedium = '#EC407A' // links / iconos (antes turquoiseDark)
 
 export default {
   greyDark: '#555',
   grey: '#888',
   greyLight: '#CCC',
   greyVeryLight: '#F4F4F4',
-  orange: '#F38337',
-  purple: '#3A2671',
-  purpleLight: '#938EB2',
-  turquoiseDark: turquoiseDark,
-  turquoise: '#CFECEA',
-  turquoiseLight: '#E9F2ED',
+  orange: coral,
+  purple: rose,
+  purpleLight: roseLight,
+  turquoiseDark: roseMedium,
+  turquoise: rosePale,
+  turquoiseLight: blush,
   iconColors: {
     bleeding: {
       color: red,
       shades: shadesOfRed,
     },
     temperature: {
-      color: turquoiseDark,
+      color: roseMedium,
     },
     mucus: {
       color: blue,
@@ -54,8 +63,8 @@ export default {
       shades: [lightGreen],
     },
     mood: {
-      color: orange,
-      shades: [orange],
+      color: coral,
+      shades: [coral],
     },
     note: {
       color: mint,

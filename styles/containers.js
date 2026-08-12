@@ -4,7 +4,7 @@ import Spacing from './spacing'
 export default {
   box: {
     borderColor: Colors.orange,
-    borderRadius: 5,
+    borderRadius: 12,
     borderWidth: 1,
     marginTop: Spacing.small,
     marginRight: Spacing.small,

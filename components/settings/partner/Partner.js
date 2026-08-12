@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
   },
   insight: {
     backgroundColor: 'white',
-    borderRadius: 5,
+    borderRadius: 12,
     marginTop: Spacing.tiny,
     padding: Spacing.base,
   },

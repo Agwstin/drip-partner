@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   modalWindow: {
     alignSelf: 'center',
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 16,
     marginTop: Sizes.huge * 2,
     paddingVertical: Spacing.large * 2,
     position: 'absolute',

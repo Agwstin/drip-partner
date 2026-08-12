@@ -20,7 +20,7 @@ exports[`Footnote component when children are present, renders them 1`] = `
           "fontSize": 34.285714285714285,
         },
         {
-          "color": "#F38337",
+          "color": "#FF5C8A",
         },
       ]
     }
