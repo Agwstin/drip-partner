@@ -1,4 +1,4 @@
-package com.drip;
+package com.goteo;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

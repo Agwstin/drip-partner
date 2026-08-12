@@ -1,0 +1,9 @@
+name = "goteo-cloud"
+main = "worker/index.js"
+compatibility_date = "2026-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "goteo-cloud"
+database_id = "3e8e9e0b-0f5c-4668-b62d-75d670cab7c1"

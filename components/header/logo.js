@@ -6,7 +6,7 @@ import AppText from '../common/app-text'
 import { Colors, Fonts, Sizes } from '../../styles'
 
 const Logo = () => {
-  return <AppText style={styles.logo}>drip.</AppText>
+  return <AppText style={styles.logo}>goteo.</AppText>
 }
 
 const styles = StyleSheet.create({

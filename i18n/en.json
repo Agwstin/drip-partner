@@ -185,15 +185,15 @@
           "chartNfp": "On the chart, you can track fertility signs. When both a valid temperature shift and a cervical mucus or cervix shift have been detected, an orange line will be displayed on the chart. This indicates the end of the peri-ovulatory and the beginning of the post-ovulatory phase.",
           "cycleRelation": "It may be influenced by or have an impact on your menstrual cycles and its hormonal changes.",
           "excludeExplainer": "You can exclude these values, so they won't be taken into account for any fertility calculation.",
-          "nfpThinkForYourselfReminder": "When - on a daily/regular basis - you track:\n1. your basal body temperature,\n2. your cervical mucus OR your cervix,\n3. and menstrual bleeding,\nthe app helps you identify in which phase of the menstrual cycle you are.\n\ndrip makes period predictions for you and helps you apply the sympto-thermal method for fertility awareness. But please remember that this app is made by humans, and humans make mistakes. Always think for yourself: \"Does this make sense?\" Remember, you don't need an app to understand your cycle! However, drip wants to support you and make period tracking easier, more transparent and secure.\n\nPlease find more info on the sympto-thermal method in <0>{{urlText}}</0>.",
+          "nfpThinkForYourselfReminder": "When - on a daily/regular basis - you track:\n1. your basal body temperature,\n2. your cervical mucus OR your cervix,\n3. and menstrual bleeding,\nthe app helps you identify in which phase of the menstrual cycle you are.\n\ngoteo makes period predictions for you and helps you apply the sympto-thermal method for fertility awareness. But please remember that this app is made by humans, and humans make mistakes. Always think for yourself: \"Does this make sense?\" Remember, you don't need an app to understand your cycle! However, goteo wants to support you and make period tracking easier, more transparent and secure.\n\nPlease find more info on the sympto-thermal method in <0>{{urlText}}</0>.",
           "noNfpSymptom": "The app allows you to track this symptom for your information, it is not taken into account for any calculation. On the chart you can check how often you track this symptom.\n\nIf you are curious to learn more about the sympto-thermal method that is used for fertility tracking within the app, you can visit <0>{{urlText}}</0>."
         },
         "symptoms": {
           "bleeding": {
-            "description": "Tracking menstrual bleeding allows you to know the beginning and the end of a menstrual cycle.\nAfter tracking at least 3 menstrual cycles, drip will give you an overview of\n · how long your cycles last on average (in \"stats\")\n· whether the length of your cycles varied significantly (in \"stats\" and in bleeding predictions)\n· predict your next 3 cycles with a range of 3 or 5 days (on home screen and \"calendar\") if this functionality is enabled in the customization settings.\n\nThe app allows you to track different intensities of bleeding. On the chart and on the calendar, bleeding values are colored in different shades of red. The darker, the more intense your bleeding. Every bleeding value that is not excluded is taken into account for fertility calculation and period predictions.\n\nExcluding bleeding values is for tracking bleeding when it's not marking the start of a new cycle or the continuation of menstrual bleeding, e.g. bleeding caused by ovulation or a miscarriage."
+            "description": "Tracking menstrual bleeding allows you to know the beginning and the end of a menstrual cycle.\nAfter tracking at least 3 menstrual cycles, goteo will give you an overview of\n · how long your cycles last on average (in \"stats\")\n· whether the length of your cycles varied significantly (in \"stats\" and in bleeding predictions)\n· predict your next 3 cycles with a range of 3 or 5 days (on home screen and \"calendar\") if this functionality is enabled in the customization settings.\n\nThe app allows you to track different intensities of bleeding. On the chart and on the calendar, bleeding values are colored in different shades of red. The darker, the more intense your bleeding. Every bleeding value that is not excluded is taken into account for fertility calculation and period predictions.\n\nExcluding bleeding values is for tracking bleeding when it's not marking the start of a new cycle or the continuation of menstrual bleeding, e.g. bleeding caused by ovulation or a miscarriage."
           },
           "cervix": {
-            "description": "The cervix is located inside of the body at the end of the vaginal canal, between the vagina and the uterus.\n\nTracking how open or closed and how firm or soft the cervix feels can help determine in which phase of the menstrual cycle you are.\n\nBy default, the secondary symptom the app uses for the sympto-thermal method is cervical mucus, but you can change it to cervix in \"Settings\" -> \"Customization\".\n\n· How to identify a fertile cervix?\nA fertile cervix is open and feels soft like your earlobes. In contrast, an infertile cervix feels closed and hard, like the tip of your nose. If the cervix feels anything other than closed and hard, drip takes it as a sign of fertility. On the chart, a fertile cervix is colored in dark yellow, and infertile cervix is colored in light yellow.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+            "description": "The cervix is located inside of the body at the end of the vaginal canal, between the vagina and the uterus.\n\nTracking how open or closed and how firm or soft the cervix feels can help determine in which phase of the menstrual cycle you are.\n\nBy default, the secondary symptom the app uses for the sympto-thermal method is cervical mucus, but you can change it to cervix in \"Settings\" -> \"Customization\".\n\n· How to identify a fertile cervix?\nA fertile cervix is open and feels soft like your earlobes. In contrast, an infertile cervix feels closed and hard, like the tip of your nose. If the cervix feels anything other than closed and hard, goteo takes it as a sign of fertility. On the chart, a fertile cervix is colored in dark yellow, and infertile cervix is colored in light yellow.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
           },
           "desire": {
             "description": "The app allows you to track sexual desire independently from sexual activity.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
@@ -202,7 +202,7 @@
             "description": "The app allows you to track your mood.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
           },
           "mucus": {
-            "description": "Observing and tracking cervical mucus can help determine in which phase of the menstrual cycle you are.\n\nBy default the secondary symptom the app uses for the sympto-thermal method is cervical mucus. You can change this in the customization settings.\n\n· How to identify fertile cervical mucus?\nTracking the feeling and the texture of your cervical mucus on a daily basis helps you identify changes of the quality of the cervical mucus. The values you enter for both feeling and texture of your cervical mucus are combined by drip into one of five values following the sympto-thermal method.\n\nFrom least to most fertile quality:\n· t = (dry feeling + no texture),\n· ∅ = (no feeling + no texture),\n· f = (wet feeling + no texture),\n· S = (no OR wet feeling + creamy texture),\n· S+ = (any feeling + egg white texture) OR (slippery feeling + any texture).\n\nOn the chart, cervical mucus is colored in blue: the darker the shade of blue the more fertile the quality of your cervical mucus.\n\nPlease note that drip does not yet support \"parenthesis values\": According to the sympto-thermal method, you can qualify a cervical mucus value by putting parentheses around it, to indicate that it doesn't fully meet the descriptors of one of the five categories, and instead is in between. This functionality will be supported in the future.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+            "description": "Observing and tracking cervical mucus can help determine in which phase of the menstrual cycle you are.\n\nBy default the secondary symptom the app uses for the sympto-thermal method is cervical mucus. You can change this in the customization settings.\n\n· How to identify fertile cervical mucus?\nTracking the feeling and the texture of your cervical mucus on a daily basis helps you identify changes of the quality of the cervical mucus. The values you enter for both feeling and texture of your cervical mucus are combined by goteo into one of five values following the sympto-thermal method.\n\nFrom least to most fertile quality:\n· t = (dry feeling + no texture),\n· ∅ = (no feeling + no texture),\n· f = (wet feeling + no texture),\n· S = (no OR wet feeling + creamy texture),\n· S+ = (any feeling + egg white texture) OR (slippery feeling + any texture).\n\nOn the chart, cervical mucus is colored in blue: the darker the shade of blue the more fertile the quality of your cervical mucus.\n\nPlease note that goteo does not yet support \"parenthesis values\": According to the sympto-thermal method, you can qualify a cervical mucus value by putting parentheses around it, to indicate that it doesn't fully meet the descriptors of one of the five categories, and instead is in between. This functionality will be supported in the future.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
           },
           "note": {
             "description": "Note allows you to track any extra information you want to save. It is the only category that can store information for a date in the future. This can be helpful for reminding you of an appointment."
@@ -236,7 +236,7 @@
   },
   "labels": {
     "bleedingPrediction": {
-      "noPrediction": "As soon as you have tracked 3 menstrual cycles, drip will make predictions for the next ones."
+      "noPrediction": "As soon as you have tracked 3 menstrual cycles, goteo will make predictions for the next ones."
     },
     "home": {
       "addDataForToday": "add data for today",
@@ -315,7 +315,7 @@
     "about": {
       "credits": {
         "madeBy": "Made by:",
-        "text": "We love the drip team. Thanks and lots of <3 to all of our condriputors. Thanks to Paula Härtel for the symptom tracking icons. All the other icons from:",
+        "text": "We love the goteo team. Thanks and lots of <3 to all of our condriputors. Thanks to Paula Härtel for the symptom tracking icons. All the other icons from:",
         "title": "Credits"
       },
       "donate": {
@@ -329,7 +329,7 @@
         "text": "Please note that your data is stored locally on your phone and not on a server. This means your data cannot be read by anyone else unless they have access to your phone. We want to ensure that you stay in control of your own data. If you are planning to switch or reset your phone, please remember to export your data before doing so. You can reinstall the app afterwards and import your data.\n\nIf you encounter any issues, please take a look at our Frequently Asked Questions page."
       },
       "philosophy": {
-        "text": "drip makes period predictions for you and helps you apply the sympto-thermal method for fertility awareness. But please remember that this app is made by humans, and humans make mistakes. Always think for yourself: \"Does this make sense?\" Remember, you don't need an app to understand your cycle! However, drip wants to support you and make period tracking easier, more transparent and secure.",
+        "text": "goteo makes period predictions for you and helps you apply the sympto-thermal method for fertility awareness. But please remember that this app is made by humans, and humans make mistakes. Always think for yourself: \"Does this make sense?\" Remember, you don't need an app to understand your cycle! However, goteo wants to support you and make period tracking easier, more transparent and secure.",
         "title": "Remember to think for yourself"
       },
       "title": "About",
@@ -342,7 +342,7 @@
     },
     "license": {
       "text": "Copyright (C) {{currentYear}} Heart of Code e.V.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details:",
-      "title": "drip. an open-source cycle tracking app"
+      "title": "goteo. an open-source cycle tracking app"
     },
     "menuItems": {
       "about": "About",
@@ -352,42 +352,42 @@
     },
     "privacyPolicy": {
       "dataUse": {
-        "text": "drip. respects and celebrates your privacy. There is no collection of usage data or personal information, no ads, no spyware. drip. can store data related to menstrual health locally on your device.\n\nThis includes:\n• settings\n• menstrual cycle tracking data\n\nThe data is used to display statistics and apply fertility awareness rules. This data cannot be accessed by other apps.\n\nIf you wish to delete all your app data you can do so by navigating to Settings, Data and Delete app data. This can also be done by uninstalling the app.",
+        "text": "goteo. respects and celebrates your privacy. There is no collection of usage data or personal information, no ads, no spyware. goteo. can store data related to menstrual health locally on your device.\n\nThis includes:\n• settings\n• menstrual cycle tracking data\n\nThe data is used to display statistics and apply fertility awareness rules. This data cannot be accessed by other apps.\n\nIf you wish to delete all your app data you can do so by navigating to Settings, Data and Delete app data. This can also be done by uninstalling the app.",
         "title": "Data use"
       },
       "intro": {
-        "text": "This Privacy Policy sets out how the app drip. uses and protects your personal data that you generate and store within the app.",
+        "text": "This Privacy Policy sets out how the app goteo. uses and protects your personal data that you generate and store within the app.",
         "title": "Introduction"
       },
       "permissions": {
-        "text": "For using reminders in drip you need to allow push notifications. If you don't want to use this feature you simply don't allow notifications for the app.",
+        "text": "For using reminders in goteo you need to allow push notifications. If you don't want to use this feature you simply don't allow notifications for the app.",
         "title": "Permissions"
       },
       "title": "Privacy Policy",
       "transparency": {
-        "text": "You can read through the source code of drip. to ensure the given information is correct. The source code is like a recipe: It tells you how much and what kind of ingredients you need and how you prepare them to cook a tasty meal or program a funky app.\n\nBuon appetito!",
+        "text": "You can read through the source code of goteo. to ensure the given information is correct. The source code is like a recipe: It tells you how much and what kind of ingredients you need and how you prepare them to cook a tasty meal or program a funky app.\n\nBuon appetito!",
         "title": "Transparency"
       }
     },
     "settings": {
       "customization": {
         "fertilityPhases": {
-          "description": "If you enter menstrual bleeding, temperature and cervical mucus or cervix data according to the sympto-thermal method, drip will calculate cycle phases with the provided data.",
+          "description": "If you enter menstrual bleeding, temperature and cervical mucus or cervix data according to the sympto-thermal method, goteo will calculate cycle phases with the provided data.",
           "disabledModal": {
             "description": "To use fertility phases calculation please enable both temperature tracking and either cervical mucus or cervix tracking above.",
             "title": "Disabled"
           },
-          "off": "If you switch this on, drip will show fertility related information.",
-          "on": "If you switch this off, drip will not show fertility related information.",
+          "off": "If you switch this on, goteo will show fertility related information.",
+          "on": "If you switch this off, goteo will not show fertility related information.",
           "title": "Fertility phases calculation"
         },
         "infertileDaysInfo": {
-          "note": "drip applies the sympto-thermal method for calculating infertile days at the start of the cycle (see <0>{{urlText}}</0> for more info). However, drip does not currently apply the so called 20-day-rule, which determines infertile days at the cycle start from past cycle lengths in case no past sympto-thermal info is available.",
+          "note": "goteo applies the sympto-thermal method for calculating infertile days at the start of the cycle (see <0>{{urlText}}</0> for more info). However, goteo does not currently apply the so called 20-day-rule, which determines infertile days at the cycle start from past cycle lengths in case no past sympto-thermal info is available.",
           "title": "Infertile days at cycle start"
         },
         "periodPrediction": {
           "off": "There are no predictions for menstrual cycles displayed. If turned on, the calendar and the home screen will display period predictions.",
-          "on": "drip predicts the starting days of the next 3 menstrual bleedings based on statistics if you previously tracked at least 3 complete cycles.",
+          "on": "goteo predicts the starting days of the next 3 menstrual bleedings based on statistics if you previously tracked at least 3 complete cycles.",
           "title": "Period predictions"
         },
         "secondarySymptom": {
@@ -440,7 +440,7 @@
             "sharingFailed": "There was a problem sharing the data export file"
           },
           "text": "Export data in CSV format for backup or other use",
-          "title": "My drip data export"
+          "title": "My goteo data export"
         },
         "import": {
           "button": "Import data",
@@ -483,7 +483,7 @@
         },
         "info": {
           "name": "Info",
-          "text": "Learn more about how drip works"
+          "text": "Learn more about how goteo works"
         },
         "language": {
           "name": "Language",
@@ -567,7 +567,7 @@
       "cycleLength": "Cycle length",
       "cycleStart": "Cycle start"
     },
-    "footnote": "Based on the standard deviation of the length of all your tracked cycles, drip calculates a range for the start day of the next 3 cycles.  The range is 3 days if your standard deviation is less than 1.5 and 5 days if the value is greater than 1.5.\n\nThe standard deviation tells you how much the length of your cycles varies. 0 means that all your cycles are exactly the same length and the higher the value, the more the cycle length varies.",
+    "footnote": "Based on the standard deviation of the length of all your tracked cycles, goteo calculates a range for the start day of the next 3 cycles.  The range is 3 days if your standard deviation is less than 1.5 and 5 days if the value is greater than 1.5.\n\nThe standard deviation tells you how much the length of your cycles varies. 0 means that all your cycles are exactly the same length and the higher the value, the more the cycle length varies.",
     "intro": "Basic statistics about the length of your cycles.",
     "noData": "At least one completed cycle is needed to display stats.",
     "overview": {

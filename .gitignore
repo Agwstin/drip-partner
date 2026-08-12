@@ -76,3 +76,6 @@ android/app/src/main/assets/*
 # yarn
 .yarn/*
 yarn-error.log
+.env.cloudflare
+cloudflare/.wrangler/
+cloudflare/node_modules/

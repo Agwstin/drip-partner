@@ -185,15 +185,15 @@
           "chartNfp": "En el gráfico podés registrar los signos de fertilidad. Cuando se detecten tanto un cambio válido de temperatura como un cambio en el moco cervical o el cuello uterino, aparecerá una línea naranja en el gráfico. Esta indica el final de la fase periovulatoria y el comienzo de la fase posovulatoria.",
           "cycleRelation": "Puede estar influido por tus ciclos menstruales y sus cambios hormonales, o tener un efecto sobre ellos.",
           "excludeExplainer": "Podés excluir estos valores para que no se tengan en cuenta en ningún cálculo de fertilidad.",
-          "nfpThinkForYourselfReminder": "Cuando registrás de manera diaria o habitual:\n1. tu temperatura basal,\n2. tu moco cervical O tu cuello uterino,\n3. y el sangrado menstrual,\nla app te ayuda a identificar en qué fase del ciclo menstrual estás.\n\ndrip hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, drip quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.\n\nEncontrá más información sobre el método sintotérmico en <0>{{urlText}}</0>.",
+          "nfpThinkForYourselfReminder": "Cuando registrás de manera diaria o habitual:\n1. tu temperatura basal,\n2. tu moco cervical O tu cuello uterino,\n3. y el sangrado menstrual,\nla app te ayuda a identificar en qué fase del ciclo menstrual estás.\n\ngoteo hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, goteo quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.\n\nEncontrá más información sobre el método sintotérmico en <0>{{urlText}}</0>.",
           "noNfpSymptom": "La app te permite registrar este síntoma como información, pero no lo tiene en cuenta para ningún cálculo. En el gráfico podés ver con qué frecuencia lo registrás.\n\nSi querés saber más sobre el método sintotérmico que usa la app para el seguimiento de la fertilidad, visitá <0>{{urlText}}</0>."
         },
         "symptoms": {
           "bleeding": {
-            "description": "Registrar el sangrado menstrual te permite conocer el comienzo y el final de un ciclo menstrual.\nDespués de registrar al menos 3 ciclos menstruales, drip te mostrará un resumen de:\n· cuánto duran tus ciclos en promedio (en \"Estadísticas\")\n· si la duración de tus ciclos varió de manera significativa (en \"Estadísticas\" y en las predicciones de sangrado)\n· la predicción de tus próximos 3 ciclos, con un margen de 3 o 5 días (en la pantalla de inicio y en \"Calendario\"), si habilitaste esta función en los ajustes de personalización.\n\nLa app te permite registrar distintas intensidades de sangrado. En el gráfico y el calendario, los valores de sangrado aparecen en diferentes tonos de rojo. Cuanto más oscuro sea el tono, más intenso es el sangrado. Todo valor de sangrado que no esté excluido se tiene en cuenta para calcular la fertilidad y predecir la menstruación.\n\nLa opción de excluir valores sirve para registrar un sangrado que no marca el inicio de un nuevo ciclo ni la continuación del sangrado menstrual, por ejemplo, un sangrado causado por la ovulación o un aborto espontáneo."
+            "description": "Registrar el sangrado menstrual te permite conocer el comienzo y el final de un ciclo menstrual.\nDespués de registrar al menos 3 ciclos menstruales, goteo te mostrará un resumen de:\n· cuánto duran tus ciclos en promedio (en \"Estadísticas\")\n· si la duración de tus ciclos varió de manera significativa (en \"Estadísticas\" y en las predicciones de sangrado)\n· la predicción de tus próximos 3 ciclos, con un margen de 3 o 5 días (en la pantalla de inicio y en \"Calendario\"), si habilitaste esta función en los ajustes de personalización.\n\nLa app te permite registrar distintas intensidades de sangrado. En el gráfico y el calendario, los valores de sangrado aparecen en diferentes tonos de rojo. Cuanto más oscuro sea el tono, más intenso es el sangrado. Todo valor de sangrado que no esté excluido se tiene en cuenta para calcular la fertilidad y predecir la menstruación.\n\nLa opción de excluir valores sirve para registrar un sangrado que no marca el inicio de un nuevo ciclo ni la continuación del sangrado menstrual, por ejemplo, un sangrado causado por la ovulación o un aborto espontáneo."
           },
           "cervix": {
-            "description": "El cuello uterino (cérvix) se encuentra dentro del cuerpo, al final del canal vaginal, entre la vagina y el útero.\n\nRegistrar qué tan abierto o cerrado y qué tan firme o blando se siente el cuello uterino puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical, pero podés cambiarlo por el cuello uterino en \"Ajustes\" -> \"Personalización\".\n\n· ¿Cómo identificar un cuello uterino fértil?\nUn cuello uterino fértil está abierto y se siente blando, como el lóbulo de la oreja. En cambio, un cuello uterino infértil se siente cerrado y firme, como la punta de la nariz. Si se siente de cualquier otra forma que no sea cerrado y firme, drip lo interpreta como un signo de fertilidad. En el gráfico, un cuello uterino fértil aparece en amarillo oscuro y uno infértil, en amarillo claro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+            "description": "El cuello uterino (cérvix) se encuentra dentro del cuerpo, al final del canal vaginal, entre la vagina y el útero.\n\nRegistrar qué tan abierto o cerrado y qué tan firme o blando se siente el cuello uterino puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical, pero podés cambiarlo por el cuello uterino en \"Ajustes\" -> \"Personalización\".\n\n· ¿Cómo identificar un cuello uterino fértil?\nUn cuello uterino fértil está abierto y se siente blando, como el lóbulo de la oreja. En cambio, un cuello uterino infértil se siente cerrado y firme, como la punta de la nariz. Si se siente de cualquier otra forma que no sea cerrado y firme, goteo lo interpreta como un signo de fertilidad. En el gráfico, un cuello uterino fértil aparece en amarillo oscuro y uno infértil, en amarillo claro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
           },
           "desire": {
             "description": "La app te permite registrar el deseo sexual de manera independiente de la actividad sexual.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
@@ -202,7 +202,7 @@
             "description": "La app te permite registrar tu estado de ánimo.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
           },
           "mucus": {
-            "description": "Observar y registrar el moco cervical puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical. Podés cambiarlo en los ajustes de personalización.\n\n· ¿Cómo identificar el moco cervical fértil?\nRegistrar a diario la sensación y la textura del moco cervical te ayuda a reconocer los cambios en su calidad. drip combina los valores que ingresás para la sensación y la textura en uno de los cinco valores del método sintotérmico.\n\nDe menor a mayor calidad fértil:\n· t = (sensación seca + sin textura),\n· ∅ = (sin sensación + sin textura),\n· f = (sensación húmeda + sin textura),\n· S = (sin sensación O sensación húmeda + textura cremosa),\n· S+ = (cualquier sensación + textura de clara de huevo) O (sensación resbaladiza + cualquier textura).\n\nEn el gráfico, el moco cervical aparece en azul: cuanto más oscuro sea el tono, mayor será la calidad fértil del moco cervical.\n\nTené en cuenta que drip todavía no admite \"valores entre paréntesis\". Según el método sintotérmico, podés escribir un valor de moco cervical entre paréntesis para indicar que no cumple por completo con las características de una de las cinco categorías, sino que se encuentra entre dos de ellas. Esta función estará disponible en el futuro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+            "description": "Observar y registrar el moco cervical puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical. Podés cambiarlo en los ajustes de personalización.\n\n· ¿Cómo identificar el moco cervical fértil?\nRegistrar a diario la sensación y la textura del moco cervical te ayuda a reconocer los cambios en su calidad. goteo combina los valores que ingresás para la sensación y la textura en uno de los cinco valores del método sintotérmico.\n\nDe menor a mayor calidad fértil:\n· t = (sensación seca + sin textura),\n· ∅ = (sin sensación + sin textura),\n· f = (sensación húmeda + sin textura),\n· S = (sin sensación O sensación húmeda + textura cremosa),\n· S+ = (cualquier sensación + textura de clara de huevo) O (sensación resbaladiza + cualquier textura).\n\nEn el gráfico, el moco cervical aparece en azul: cuanto más oscuro sea el tono, mayor será la calidad fértil del moco cervical.\n\nTené en cuenta que goteo todavía no admite \"valores entre paréntesis\". Según el método sintotérmico, podés escribir un valor de moco cervical entre paréntesis para indicar que no cumple por completo con las características de una de las cinco categorías, sino que se encuentra entre dos de ellas. Esta función estará disponible en el futuro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
           },
           "note": {
             "description": "Las notas te permiten registrar cualquier información adicional que quieras guardar. Es la única categoría que admite información para una fecha futura, lo que puede servirte para recordar un turno."
@@ -236,7 +236,7 @@
   },
   "labels": {
     "bleedingPrediction": {
-      "noPrediction": "En cuanto registres 3 ciclos menstruales, drip hará predicciones para los próximos."
+      "noPrediction": "En cuanto registres 3 ciclos menstruales, goteo hará predicciones para los próximos."
     },
     "home": {
       "addDataForToday": "agregar datos de hoy",
@@ -315,12 +315,12 @@
     "about": {
       "credits": {
         "madeBy": "Hecha por:",
-        "text": "Queremos mucho al equipo de drip. Gracias y mucho <3 para quienes contribuyen con el proyecto. Gracias a Paula Härtel por los íconos del registro de síntomas. Los demás íconos provienen de:",
+        "text": "Queremos mucho al equipo de goteo. Gracias y mucho <3 para quienes contribuyen con el proyecto. Gracias a Paula Härtel por los íconos del registro de síntomas. Los demás íconos provienen de:",
         "title": "Créditos"
       },
       "donate": {
         "button": "Doná acá",
-        "text": "El equipo de drip desarrolla esta app de manera voluntaria y siempre agradece el apoyo. Podés contribuir con el código, enviar comentarios, sugerir mejoras o funciones, hacer pruebas o donar. Todo aporte nos ayuda y motiva a mantener la app y desarrollar nuevas funciones. ¡Gracias por tu apoyo!",
+        "text": "El equipo de goteo desarrolla esta app de manera voluntaria y siempre agradece el apoyo. Podés contribuir con el código, enviar comentarios, sugerir mejoras o funciones, hacer pruebas o donar. Todo aporte nos ayuda y motiva a mantener la app y desarrollar nuevas funciones. ¡Gracias por tu apoyo!",
         "title": "Apoyanos"
       },
       "intro": {
@@ -329,7 +329,7 @@
         "text": "Tené en cuenta que tus datos se guardan de forma local en tu teléfono, no en un servidor. Por eso, nadie puede leerlos a menos que tenga acceso a tu teléfono. Queremos que mantengas el control de tus propios datos. Si pensás cambiar o restablecer tu teléfono, acordate de exportar tus datos antes. Después podés volver a instalar la app e importarlos.\n\nSi tenés algún problema, consultá nuestra página de preguntas frecuentes."
       },
       "philosophy": {
-        "text": "drip hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, drip quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.",
+        "text": "goteo hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, goteo quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.",
         "title": "Recordá pensar por tu cuenta"
       },
       "title": "Acerca de",
@@ -342,7 +342,7 @@
     },
     "license": {
       "text": "Copyright (C) {{currentYear}} Heart of Code e.V.\n\nEste programa se distribuye con la intención de que sea útil, pero SIN NINGUNA GARANTÍA, ni siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consultá la Licencia Pública General de GNU para obtener más detalles:",
-      "title": "drip. una app de código abierto para registrar el ciclo"
+      "title": "goteo. una app de código abierto para registrar el ciclo"
     },
     "menuItems": {
       "about": "Acerca de",
@@ -352,11 +352,11 @@
     },
     "privacyPolicy": {
       "dataUse": {
-        "text": "drip. respeta y celebra tu privacidad. No recopila datos de uso ni información personal, y no incluye publicidad ni programas espía. drip. puede guardar localmente en tu dispositivo datos relacionados con la salud menstrual.\n\nEsto incluye:\n• ajustes\n• datos del registro del ciclo menstrual\n\nLos datos se usan para mostrar estadísticas y aplicar reglas de conocimiento de la fertilidad. Otras apps no pueden acceder a ellos.\n\nSi querés eliminar todos los datos de la app, andá a Ajustes, Datos y Eliminar datos de la app. También podés eliminarlos desinstalando la app.",
+        "text": "goteo. respeta y celebra tu privacidad. No recopila datos de uso ni información personal, y no incluye publicidad ni programas espía. goteo. puede guardar localmente en tu dispositivo datos relacionados con la salud menstrual.\n\nEsto incluye:\n• ajustes\n• datos del registro del ciclo menstrual\n\nLos datos se usan para mostrar estadísticas y aplicar reglas de conocimiento de la fertilidad. Otras apps no pueden acceder a ellos.\n\nSi querés eliminar todos los datos de la app, andá a Ajustes, Datos y Eliminar datos de la app. También podés eliminarlos desinstalando la app.",
         "title": "Uso de los datos"
       },
       "intro": {
-        "text": "Esta Política de privacidad explica cómo la app drip. usa y protege los datos personales que generás y guardás en ella.",
+        "text": "Esta Política de privacidad explica cómo la app goteo. usa y protege los datos personales que generás y guardás en ella.",
         "title": "Introducción"
       },
       "permissions": {
@@ -365,29 +365,29 @@
       },
       "title": "Política de privacidad",
       "transparency": {
-        "text": "Podés leer el código fuente de drip. para comprobar que esta información es correcta. El código fuente es como una receta: indica qué ingredientes necesitás, en qué cantidad y cómo prepararlos para cocinar algo rico o programar una app divertida.\n\nBuon appetito!",
+        "text": "Podés leer el código fuente de goteo. para comprobar que esta información es correcta. El código fuente es como una receta: indica qué ingredientes necesitás, en qué cantidad y cómo prepararlos para cocinar algo rico o programar una app divertida.\n\nBuon appetito!",
         "title": "Transparencia"
       }
     },
     "settings": {
       "customization": {
         "fertilityPhases": {
-          "description": "Si ingresás datos de sangrado menstrual, temperatura y moco cervical o cuello uterino de acuerdo con el método sintotérmico, drip calculará las fases del ciclo con esos datos.",
+          "description": "Si ingresás datos de sangrado menstrual, temperatura y moco cervical o cuello uterino de acuerdo con el método sintotérmico, goteo calculará las fases del ciclo con esos datos.",
           "disabledModal": {
             "description": "Para usar el cálculo de las fases de fertilidad, activá el registro de temperatura y también el registro del moco cervical o del cuello uterino arriba.",
             "title": "Desactivado"
           },
-          "off": "Si activás esta opción, drip mostrará información relacionada con la fertilidad.",
-          "on": "Si desactivás esta opción, drip dejará de mostrar información relacionada con la fertilidad.",
+          "off": "Si activás esta opción, goteo mostrará información relacionada con la fertilidad.",
+          "on": "Si desactivás esta opción, goteo dejará de mostrar información relacionada con la fertilidad.",
           "title": "Cálculo de las fases de fertilidad"
         },
         "infertileDaysInfo": {
-          "note": "drip aplica el método sintotérmico para calcular los días infértiles al comienzo del ciclo (consultá <0>{{urlText}}</0> para obtener más información). Sin embargo, actualmente drip no aplica la llamada regla de los 20 días, que determina los días infértiles al comienzo del ciclo a partir de la duración de ciclos anteriores cuando no hay información sintotérmica previa.",
+          "note": "goteo aplica el método sintotérmico para calcular los días infértiles al comienzo del ciclo (consultá <0>{{urlText}}</0> para obtener más información). Sin embargo, actualmente goteo no aplica la llamada regla de los 20 días, que determina los días infértiles al comienzo del ciclo a partir de la duración de ciclos anteriores cuando no hay información sintotérmica previa.",
           "title": "Días infértiles al comienzo del ciclo"
         },
         "periodPrediction": {
           "off": "No se muestran predicciones de los ciclos menstruales. Si activás esta opción, aparecerán predicciones de la menstruación en el calendario y la pantalla de inicio.",
-          "on": "drip usa estadísticas para predecir el comienzo de tus próximos 3 sangrados menstruales si antes registraste al menos 3 ciclos completos.",
+          "on": "goteo usa estadísticas para predecir el comienzo de tus próximos 3 sangrados menstruales si antes registraste al menos 3 ciclos completos.",
           "title": "Predicciones de la menstruación"
         },
         "secondarySymptom": {
@@ -567,7 +567,7 @@
       "cycleLength": "Duración del ciclo",
       "cycleStart": "Inicio del ciclo"
     },
-    "footnote": "A partir de la desviación estándar de la duración de todos los ciclos que registraste, drip calcula un intervalo para el día de inicio de los próximos 3 ciclos. El intervalo es de 3 días si la desviación estándar es menor que 1,5 y de 5 días si es mayor que 1,5.\n\nLa desviación estándar indica cuánto varía la duración de tus ciclos. Un valor de 0 significa que todos duran exactamente lo mismo. Cuanto mayor sea el valor, más variará la duración.",
+    "footnote": "A partir de la desviación estándar de la duración de todos los ciclos que registraste, goteo calcula un intervalo para el día de inicio de los próximos 3 ciclos. El intervalo es de 3 días si la desviación estándar es menor que 1,5 y de 5 días si es mayor que 1,5.\n\nLa desviación estándar indica cuánto varía la duración de tus ciclos. Un valor de 0 significa que todos duran exactamente lo mismo. Cuanto mayor sea el valor, más variará la duración.",
     "intro": "Estadísticas básicas sobre la duración de tus ciclos.",
     "noData": "Se necesita al menos un ciclo completo para mostrar las estadísticas.",
     "overview": {
