@@ -24,6 +24,7 @@ import {
 } from '../../../lib/partner-storage'
 import { normalizeCycles, phaseProfiles, symptomCorrelations, worstSymptomDays, generateInsights } from '../../../lib/partner-insights'
 import { buildSharePayload } from '../../../lib/partner-share'
+import { createPartnerSync } from '../../../lib/partner-sync'
 import { getCycleDaysSortedByDate, getCycleStartsSortedByDate, mapRealmObjToJsObj } from '../../../db'
 
 /**
@@ -46,6 +47,9 @@ const Partner = () => {
   const [sharedSecret, setSharedSecret] = useState(null)
   const [decryptedPayload, setDecryptedPayload] = useState(null)
   const [myEncryptedBlob, setMyEncryptedBlob] = useState('')
+  const [relayUrl, setRelayUrl] = useState('')
+  const [syncStatus, setSyncStatus] = useState('')
+  const syncRef = React.useRef(null)
 
   useEffect(() => {
     initPartnerStorage()
@@ -201,6 +205,81 @@ const Partner = () => {
     }
   }
 
+  /** Arma/regenera insights desde un payload recibido (shared con el demo) */
+  const computeInsights = (payload) => {
+    const cycles = normalizeCycles(payload.cycleDays, payload.cycleStarts)
+    return generateInsights(
+      phaseProfiles(cycles),
+      symptomCorrelations(cycles),
+      worstSymptomDays(cycles)
+    )
+  }
+
+  const applyReceivedBlob = async (blob) => {
+    const secret =
+      sharedSecret ||
+      (identity && peer && deriveSharedSecret(identity.secretKeyB64, peer.publicKeyB64))
+    if (!secret) throw new Error(t('noSecret'))
+    const plaintext = decryptFromPartner(secret, blob)
+    const payload = JSON.parse(plaintext)
+    await savePartnerBlob({ encrypted: blob, receivedAt: new Date().toISOString() })
+    setDecryptedPayload(payload)
+    setInsights(computeInsights(payload))
+  }
+
+  /** Activa el sync automático por relay (y LAN si se agrega) */
+  const handleStartSync = async () => {
+    try {
+      if (!identity || !peer) {
+        Alert.alert(t('error'), t('noSecret'))
+        return
+      }
+      const base = relayUrl.trim()
+      if (!base) {
+        Alert.alert(t('error'), 'Configurá la URL del relay primero (ej. http://192.168.1.10:8099)')
+        return
+      }
+      if (syncRef.current) syncRef.current.stop()
+
+      const motor = createPartnerSync({
+        getIdentity: () => identity,
+        getPeer: () => peer,
+        getCycleDays: () => getCycleDaysSortedByDate().map(mapRealmObjToJsObj),
+        getCycleStarts: () =>
+          getCycleStartsSortedByDate()
+            .map(mapRealmObjToJsObj)
+            .map((d) => d.date),
+        getRelayBaseUrl: () => base,
+        onReceivedBlob: async (blob) => {
+          try {
+            await applyReceivedBlob(blob)
+            setSyncStatus('Blob nuevo recibido ✓')
+          } catch (e) {
+            setSyncStatus(`Error al descifrar: ${e.message}`)
+          }
+        },
+        onStatus: (s) => {
+          if (s.type === 'pushed') setSyncStatus(`Push OK ${new Date().toLocaleTimeString()}`)
+          if (s.type === 'pull-error' || s.type === 'push-error') setSyncStatus(`Sync error: ${s.error}`)
+        },
+        intervalMs: 30000,
+      })
+      syncRef.current = motor
+      motor.start()
+      setSyncStatus('Sync automático activo (30s)')
+    } catch (e) {
+      Alert.alert(t('error'), e.message)
+    }
+  }
+
+  const handleStopSync = () => {
+    if (syncRef.current) {
+      syncRef.current.stop()
+      syncRef.current = null
+      setSyncStatus('Sync detenido')
+    }
+  }
+
   return (
     <AppPage title={t('title')}>
       <AppText>{t('intro')}</AppText>
@@ -278,7 +357,33 @@ const Partner = () => {
         </Button>
       </Segment>
 
-      {/* 4. Insights */}
+      {/* 4. Sync automático */}
+      {peer && (
+        <Segment>
+          <AppText style={styles.sectionTitle}>Sync automático (relay E2EE)</AppText>
+          <AppText>
+            Configurá la URL del relay (ej. http://192.168.1.10:8099). El sync
+            sube tu calendario cifrado cada 30s y baja el de tu pareja.
+          </AppText>
+          <AppTextInput
+            autoCapitalize="none"
+            autoCorrect={false}
+            onChangeText={setRelayUrl}
+            placeholder="https://relay.midominio.com"
+            style={styles.input}
+            value={relayUrl}
+          />
+          <Button isCTA onPress={handleStartSync} style={styles.button}>
+            Activar sync automático
+          </Button>
+          <Button onPress={handleStopSync} style={styles.button}>
+            Detener sync
+          </Button>
+          {!!syncStatus && <AppText style={styles.syncStatus}>{syncStatus}</AppText>}
+        </Segment>
+      )}
+
+      {/* 5. Insights */}
       {decryptedPayload && (
         <Segment>
           <AppText style={styles.sectionTitle}>
@@ -325,6 +430,10 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontWeight: 'bold',
     marginBottom: Spacing.tiny,
+  },
+  syncStatus: {
+    color: Colors.turquoiseDark,
+    marginTop: Spacing.tiny,
   },
 })
 
