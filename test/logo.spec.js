@@ -5,6 +5,6 @@ import Logo from '../components/header/logo'
 describe('Logo', () => {
   test('It works', async () => {
     render(<Logo />)
-    screen.getByText('drip.')
+    screen.getByText('goteo.')
   })
 })
