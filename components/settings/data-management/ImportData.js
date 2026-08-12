@@ -30,7 +30,8 @@ export default function ImportData({
       const fileInfo = await DocumentPicker.pickSingle({
         type: [
           DocumentPicker.types.csv,
-          DocumentPicker.types.json,
+          DocumentPicker.types.plainText,
+          DocumentPicker.types.allFiles,
           'text/comma-separated-values',
           'application/json',
         ],
