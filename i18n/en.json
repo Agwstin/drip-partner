@@ -495,6 +495,10 @@
         "reminders": {
           "name": "Reminders",
           "text": "Turn reminders on/off"
+        },
+        "partner": {
+          "name": "Partner",
+          "text": "Share your calendar with a partner (encrypted)"
         }
       },
       "reminders": {
@@ -519,7 +523,28 @@
           "title": "Temperature reminder"
         }
       },
-      "title": "Settings"
+      "title": "Settings",
+      "partner": {
+        "title": "Partner",
+        "intro": "Pair your app with your partner to share a read-only view of your calendar, encrypted end-to-end. All computation happens on your device.",
+        "myIdentity": "1. My invite",
+        "identityReady": "Your invite (share this with your partner):",
+        "generateIdentity": "Generate my invite",
+        "pairTitle": "2. Pair with my partner",
+        "pairedWith": "Paired with:",
+        "pairHint": "Paste your partner invite code here:",
+        "peerInvitePlaceholder": "Invite code of my partner...",
+        "pairButton": "Pair",
+        "receiveTitle": "3. Receive calendar",
+        "receiveHint": "Paste the encrypted calendar blob you received:",
+        "blobPlaceholder": "Encrypted blob...",
+        "decryptButton": "Decrypt and analyze",
+        "insightsTitle": "Insights for you",
+        "daysTracked": "days tracked",
+        "noInsights": "Not enough data yet to compute personal patterns.",
+        "error": "Error",
+        "noSecret": "You need to pair first (step 2)."
+      }
     }
   },
   "stats": {
