@@ -36,7 +36,6 @@ const Partner = () => {
   const { t } = useTranslation(null, { keyPrefix: 'sideMenu.settings.partner' })
   const [identity, setIdentity] = useState(null)
   const [peer, setPeer] = useState(null)
-  const [receivedBlob, setReceivedBlob] = useState(null)
 
   const [myInvite, setMyInvite] = useState('')
   const [peerInviteInput, setPeerInviteInput] = useState('')
@@ -53,7 +52,6 @@ const Partner = () => {
     })
     partnerPeerObservable(setPeer)
     partnerBlobObservable((blob) => {
-      setReceivedBlob(blob)
       if (blob) setBlobInput(blob.encrypted)
     })
   }, [])
