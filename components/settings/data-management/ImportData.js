@@ -4,6 +4,7 @@ import { Alert, Platform } from 'react-native'
 import DocumentPicker from 'react-native-document-picker'
 import rnfs from 'react-native-fs'
 import importCsv from '../../../lib/import-export/import-from-csv'
+import { clueJsonToCsv } from '../../../lib/import-export/clue-to-csv'
 import alertError from '../common/alert-error'
 import Segment from '../../common/segment'
 import AppText from '../../common/app-text'
@@ -27,7 +28,12 @@ export default function ImportData({
   async function getFileInfo() {
     try {
       const fileInfo = await DocumentPicker.pickSingle({
-        type: [DocumentPicker.types.csv, 'text/comma-separated-values'],
+        type: [
+          DocumentPicker.types.csv,
+          DocumentPicker.types.json,
+          'text/comma-separated-values',
+          'application/json',
+        ],
       })
       return fileInfo
     } catch (error) {
@@ -56,7 +62,15 @@ export default function ImportData({
     if (!fileContent) return
 
     try {
-      await importCsv(fileContent, shouldDeleteExistingData)
+      const trimmed = fileContent.trim()
+      // auto-detección: si arranca con '[' o '{' es JSON de Clue; si no, CSV de drip
+      const isClueJson = trimmed.startsWith('[') || trimmed.startsWith('{')
+      if (isClueJson) {
+        const csv = clueJsonToCsv(trimmed)
+        await importCsv(csv, shouldDeleteExistingData)
+      } else {
+        await importCsv(fileContent, shouldDeleteExistingData)
+      }
       Alert.alert(t('success.title'), t('success.message'))
     } catch (err) {
       showImportErrorAlert(err.message)
