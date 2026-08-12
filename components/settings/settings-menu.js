@@ -12,8 +12,7 @@ const menuItems = [
   { label: 'dataManagement', componentName: 'DataManagement' },
   { label: 'password', componentName: 'Password' },
   { label: 'partner', componentName: 'Partner' },
-  // this language switch will be released later and is therefore commented out
-  // { label: 'language', componentName: 'Language' },
+  { label: 'language', componentName: 'Language' },
 ]
 
 const SettingsMenu = ({ navigate }) => {

@@ -1,0 +1,594 @@
+{
+  "bottomMenu": {
+    "calendar": "Calendario",
+    "chart": "Gráfico",
+    "stats": "Estadísticas"
+  },
+  "chart": {
+    "noData": {
+      "buttonText": "Empezá a registrar datos",
+      "description": "Todavía no registraste ningún dato."
+    },
+    "noTemperature": {
+      "description": "Todavía no registraste datos de temperatura."
+    },
+    "tutorial": "Deslizá el gráfico para ver más fechas."
+  },
+  "cycleDay": {
+    "bleeding": {
+      "exclude": "Podés excluir este valor si no corresponde a un sangrado menstrual",
+      "heaviness": {
+        "description": "¿Qué tan abundante es el sangrado?",
+        "symptoms": {
+          "heavy": "abundante",
+          "light": "leve",
+          "medium": "moderado",
+          "spotting": "manchado"
+        },
+        "title": "intensidad"
+      }
+    },
+    "bleedingPrediction": {
+      "day_one": "Es probable que tu menstruación empiece hoy o mañana.",
+      "day_other": "Es probable que tu menstruación empiece hoy o dentro de los próximos {{count}} días.",
+      "day_zero": "Es probable que tu menstruación empiece hoy.",
+      "future": "Es probable que tu próxima menstruación empiece dentro de {{start}} a {{end}} días.",
+      "past": "Según los datos que registraste, era probable que tu menstruación empezara entre {{start}} y {{end}}."
+    },
+    "cervix": {
+      "exclude": "Podés excluir este valor si no querés usarlo para detectar la fertilidad.",
+      "firmness": {
+        "description": "Cuando está firme, puede sentirse como la punta de la nariz",
+        "symptoms": {
+          "hard": "firme",
+          "soft": "blando"
+        },
+        "title": "firmeza"
+      },
+      "opening": {
+        "description": "¿Tu cuello uterino está abierto o cerrado?",
+        "symptoms": {
+          "closed": "cerrado",
+          "medium": "intermedio",
+          "open": "abierto"
+        },
+        "title": "apertura"
+      },
+      "position": {
+        "description": "¿A qué altura de la vagina está el cuello uterino?",
+        "symptoms": {
+          "high": "alto",
+          "low": "bajo",
+          "medium": "medio"
+        },
+        "title": "posición"
+      }
+    },
+    "desire": {
+      "intensity": {
+        "description": "¿Cómo calificarías tu deseo sexual?",
+        "symptoms": {
+          "high": "alto",
+          "low": "bajo",
+          "medium": "medio"
+        },
+        "title": "Intensidad"
+      }
+    },
+    "fertilityStatus": {
+      "fertile": "fértil",
+      "fertileUntilEvening": "La fase fértil termina por la noche",
+      "infertile": "infértil",
+      "periOvu": "No pudimos detectar tanto un cambio de temperatura como un cambio en el moco cervical o el cuello uterino.",
+      "periOvuUntilEvening": "Detectamos un cambio de temperatura ($t(cycleDay.fertilityStatus.temperatureShift, {\"count\": {{rule}} }) según la regla de temperatura), además de un cambio en el moco cervical o el cuello uterino de acuerdo con el método sintotérmico. Esta noche podés considerar que comenzó la fase infértil, pero recordá comprobarlo por tu cuenta. Asegurate de que los datos tengan sentido para vos.",
+      "postOvu": "Detectamos un cambio de temperatura ($t(cycleDay.fertilityStatus.temperatureShift, {\"count\": {{rule}} })) según la regla de temperatura), además de un cambio en el moco cervical o el cuello uterino de acuerdo con el método sintotérmico. Podés considerar que estás en la fase infértil, pero recordá comprobarlo por tu cuenta. Asegurate de que los datos tengan sentido para vos.",
+      "preOvu": "Según el método sintotérmico, podés considerar infértiles los primeros 5 días del ciclo, siempre que no observes moco cervical fértil ni valores fértiles del cuello uterino.",
+      "temperatureShift_one": "1.ª excepción",
+      "temperatureShift_other": "2.ª excepción",
+      "temperatureShift_zero": "estándar",
+      "unknown": "No podemos mostrar información del ciclo porque no se agregaron datos de menstruación."
+    },
+    "mood": {
+      "feelings": {
+        "description": "¿Cómo te sentiste hoy?",
+        "symptoms": {
+          "angry": "con enojo",
+          "anxious": "con ansiedad",
+          "balanced": "en equilibrio",
+          "energetic": "con energía",
+          "fatigue": "con cansancio",
+          "fine": "bien",
+          "happy": "con alegría",
+          "other": "de otra manera",
+          "sad": "con tristeza",
+          "stressed": "con estrés"
+        }
+      }
+    },
+    "mucus": {
+      "exclude": "Podés excluir este valor si no querés usarlo para detectar la fertilidad",
+      "feeling": {
+        "description": "¿Qué sensación tenés en la entrada de la vagina?",
+        "symptoms": {
+          "dry": "seca",
+          "nothing": "ninguna",
+          "slippery": "resbaladiza",
+          "wet": "húmeda"
+        },
+        "title": "sensación"
+      },
+      "nfp": {
+        "0": "t",
+        "1": "Ø",
+        "2": "f",
+        "3": "S",
+        "4": "S+"
+      },
+      "texture": {
+        "description": "Al observar y tocar tu moco cervical, ¿qué opción lo describe mejor?",
+        "symptoms": {
+          "creamy": "cremoso",
+          "eggWhite": "clara de huevo",
+          "nothing": "ninguna"
+        },
+        "title": "textura"
+      }
+    },
+    "note": {
+      "description": "¿Querés agregar algo sobre este día?"
+    },
+    "pain": {
+      "feelings": {
+        "description": "¿Cómo se sintió tu cuerpo hoy?",
+        "symptoms": {
+          "backache": "dolor de espalda",
+          "cramps": "calambres",
+          "headache": "dolor de cabeza",
+          "migraine": "migraña",
+          "nausea": "náuseas",
+          "other": "otro",
+          "ovulationPain": "dolor de ovulación",
+          "tenderBreasts": "sensibilidad en los pechos"
+        }
+      }
+    },
+    "sex": {
+      "activity": {
+        "description": "¿Tuviste actividad sexual hoy?",
+        "symptoms": {
+          "partner": "con otra persona",
+          "solo": "a solas"
+        }
+      },
+      "contraceptives": {
+        "description": "¿Usaste algún método anticonceptivo?",
+        "symptoms": {
+          "condom": "preservativo",
+          "diaphragm": "diafragma",
+          "implant": "implante",
+          "iud": "DIU",
+          "none": "ninguno",
+          "other": "otro",
+          "patch": "parche",
+          "pill": "píldora",
+          "ring": "anillo"
+        }
+      }
+    },
+    "subTitle": "Día {{cycleDay}} del ciclo",
+    "symptomEditModal": {
+      "dataDeleted": "Se eliminaron los datos del síntoma",
+      "dataSaved": "Se guardaron los datos del síntoma",
+      "enter": "Ingresar",
+      "learnMore": {
+        "generalInfo": {
+          "chartNfp": "En el gráfico podés registrar los signos de fertilidad. Cuando se detecten tanto un cambio válido de temperatura como un cambio en el moco cervical o el cuello uterino, aparecerá una línea naranja en el gráfico. Esta indica el final de la fase periovulatoria y el comienzo de la fase posovulatoria.",
+          "cycleRelation": "Puede estar influido por tus ciclos menstruales y sus cambios hormonales, o tener un efecto sobre ellos.",
+          "excludeExplainer": "Podés excluir estos valores para que no se tengan en cuenta en ningún cálculo de fertilidad.",
+          "nfpThinkForYourselfReminder": "Cuando registrás de manera diaria o habitual:\n1. tu temperatura basal,\n2. tu moco cervical O tu cuello uterino,\n3. y el sangrado menstrual,\nla app te ayuda a identificar en qué fase del ciclo menstrual estás.\n\ndrip hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, drip quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.\n\nEncontrá más información sobre el método sintotérmico en <0>{{urlText}}</0>.",
+          "noNfpSymptom": "La app te permite registrar este síntoma como información, pero no lo tiene en cuenta para ningún cálculo. En el gráfico podés ver con qué frecuencia lo registrás.\n\nSi querés saber más sobre el método sintotérmico que usa la app para el seguimiento de la fertilidad, visitá <0>{{urlText}}</0>."
+        },
+        "symptoms": {
+          "bleeding": {
+            "description": "Registrar el sangrado menstrual te permite conocer el comienzo y el final de un ciclo menstrual.\nDespués de registrar al menos 3 ciclos menstruales, drip te mostrará un resumen de:\n· cuánto duran tus ciclos en promedio (en \"Estadísticas\")\n· si la duración de tus ciclos varió de manera significativa (en \"Estadísticas\" y en las predicciones de sangrado)\n· la predicción de tus próximos 3 ciclos, con un margen de 3 o 5 días (en la pantalla de inicio y en \"Calendario\"), si habilitaste esta función en los ajustes de personalización.\n\nLa app te permite registrar distintas intensidades de sangrado. En el gráfico y el calendario, los valores de sangrado aparecen en diferentes tonos de rojo. Cuanto más oscuro sea el tono, más intenso es el sangrado. Todo valor de sangrado que no esté excluido se tiene en cuenta para calcular la fertilidad y predecir la menstruación.\n\nLa opción de excluir valores sirve para registrar un sangrado que no marca el inicio de un nuevo ciclo ni la continuación del sangrado menstrual, por ejemplo, un sangrado causado por la ovulación o un aborto espontáneo."
+          },
+          "cervix": {
+            "description": "El cuello uterino (cérvix) se encuentra dentro del cuerpo, al final del canal vaginal, entre la vagina y el útero.\n\nRegistrar qué tan abierto o cerrado y qué tan firme o blando se siente el cuello uterino puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical, pero podés cambiarlo por el cuello uterino en \"Ajustes\" -> \"Personalización\".\n\n· ¿Cómo identificar un cuello uterino fértil?\nUn cuello uterino fértil está abierto y se siente blando, como el lóbulo de la oreja. En cambio, un cuello uterino infértil se siente cerrado y firme, como la punta de la nariz. Si se siente de cualquier otra forma que no sea cerrado y firme, drip lo interpreta como un signo de fertilidad. En el gráfico, un cuello uterino fértil aparece en amarillo oscuro y uno infértil, en amarillo claro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+          },
+          "desire": {
+            "description": "La app te permite registrar el deseo sexual de manera independiente de la actividad sexual.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
+          },
+          "mood": {
+            "description": "La app te permite registrar tu estado de ánimo.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
+          },
+          "mucus": {
+            "description": "Observar y registrar el moco cervical puede ayudarte a determinar en qué fase del ciclo menstrual estás.\n\nDe forma predeterminada, el síntoma secundario que usa la app para el método sintotérmico es el moco cervical. Podés cambiarlo en los ajustes de personalización.\n\n· ¿Cómo identificar el moco cervical fértil?\nRegistrar a diario la sensación y la textura del moco cervical te ayuda a reconocer los cambios en su calidad. drip combina los valores que ingresás para la sensación y la textura en uno de los cinco valores del método sintotérmico.\n\nDe menor a mayor calidad fértil:\n· t = (sensación seca + sin textura),\n· ∅ = (sin sensación + sin textura),\n· f = (sensación húmeda + sin textura),\n· S = (sin sensación O sensación húmeda + textura cremosa),\n· S+ = (cualquier sensación + textura de clara de huevo) O (sensación resbaladiza + cualquier textura).\n\nEn el gráfico, el moco cervical aparece en azul: cuanto más oscuro sea el tono, mayor será la calidad fértil del moco cervical.\n\nTené en cuenta que drip todavía no admite \"valores entre paréntesis\". Según el método sintotérmico, podés escribir un valor de moco cervical entre paréntesis para indicar que no cumple por completo con las características de una de las cinco categorías, sino que se encuentra entre dos de ellas. Esta función estará disponible en el futuro.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+          },
+          "note": {
+            "description": "Las notas te permiten registrar cualquier información adicional que quieras guardar. Es la única categoría que admite información para una fecha futura, lo que puede servirte para recordar un turno."
+          },
+          "pain": {
+            "description": "La app te permite registrar distintos tipos de dolor que sientas.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.cycleRelation)"
+          },
+          "sex": {
+            "description": "La app te permite registrar la actividad sexual de manera independiente del deseo sexual. Podés diferenciar entre la masturbación y la actividad sexual con una o más personas. También podés registrar tus métodos anticonceptivos. En la sección \"Gráfico\" solo se mostrará la actividad sexual: el violeta claro indica actividad a solas y el violeta oscuro, actividad con otra persona. ¿Sabías que tener un orgasmo puede ayudar a aliviar los calambres?"
+          },
+          "temperature": {
+            "description": "Uno de los signos corporales que necesitás registrar para conocer tu estado de fertilidad es la temperatura basal. La temperatura corporal cambia a lo largo del ciclo menstrual y aumenta después de la ovulación.\n\nDe forma predeterminada, el síntoma secundario es el moco cervical, pero podés cambiarlo por el cuello uterino en \"Ajustes\" -> \"Personalización\".\n\n· ¿Qué es la temperatura basal?\nEs tu temperatura después de haber permanecido en reposo durante al menos 6 horas. Para muchas personas, es la temperatura que tienen al despertarse por la mañana, después de dormir al menos 6 horas y antes de levantarse.\n\n· ¿Qué termómetro se debe usar?\nEl termómetro debe mostrar 2 decimales.\n\n· ¿Cómo se mide?\nPodés medirla por vía rectal, vaginal u oral. Si elegís la medición rectal o vaginal, tenés que medirla durante al menos 3 minutos. Si elegís la medición oral, deberías hacerlo durante al menos 5 minutos. Elegí un método y usá siempre el mismo.\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.chartNfp)\n\n$t(cycleDay.symptomEditModal.learnMore.generalInfo.excludeExplainer)"
+          }
+        },
+        "title": "Más información"
+      },
+      "remove": "Eliminar",
+      "save": "Guardar"
+    },
+    "temperature": {
+      "description": "Tomate la temperatura apenas te despiertes, antes de levantarte de la cama",
+      "exclude": "Podés excluir este valor si no querés usarlo para detectar la fertilidad",
+      "note": "¿Hay algo que pueda haber influido en este valor, como haber dormido mal o consumido alcohol?",
+      "time": "Hora",
+      "warning": {
+        "outOfChartRange": "Este valor de temperatura es demasiado alto o bajo para mostrarse en el gráfico.",
+        "outOfUserDefinedRange": "Este valor de temperatura está fuera del rango actual del gráfico. Podés cambiar el rango en los ajustes."
+      }
+    },
+    "today": "Hoy"
+  },
+  "labels": {
+    "bleedingPrediction": {
+      "noPrediction": "En cuanto registres 3 ciclos menstruales, drip hará predicciones para los próximos."
+    },
+    "home": {
+      "addDataForToday": "agregar datos de hoy",
+      "cycleDay": " día de tu ciclo",
+      "cyclePhase": " fase del ciclo: "
+    }
+  },
+  "links": {
+    "donate": "Doná acá",
+    "email": "correo electrónico",
+    "website": "Sitio web",
+    "wiki": "nuestra wiki"
+  },
+  "password": {
+    "backupReminder": {
+      "android": "Después de actualizar la contraseña, la app se reiniciará automáticamente.",
+      "ios": "Después de actualizar la contraseña, la app se cerrará automáticamente. Volvé a abrirla de forma manual."
+    },
+    "backupReminderChangePassword": {
+      "text": "Para mayor seguridad, hacé una copia de tus datos con la función de exportación antes de cambiar la contraseña.\n¡Las contraseñas largas son mejores! Considerá usar una frase como contraseña.\nAsegurate también de no perderla. Si la perdés, no hay forma de recuperar tus datos.\nLos cambios en la configuración de la contraseña no modificarán tus datos.\n",
+      "title": "Leé esto antes de cambiar tu contraseña"
+    },
+    "backupReminderDeletePassword": {
+      "text": "Si eliminás tu contraseña, tus datos dejarán de estar cifrados.\nPara mayor seguridad, hacé una copia de tus datos con la función de exportación antes de eliminar la contraseña.\nLos cambios en la configuración de la contraseña no modificarán tus datos y reiniciarán la app.\n",
+      "title": "Leé esto antes de eliminar tu contraseña"
+    },
+    "buttons": {
+      "create": "Crear contraseña",
+      "delete": "Eliminar contraseña",
+      "save": "Guardar contraseña",
+      "update": "Cambiar contraseña"
+    },
+    "changePassword": {
+      "passwordsDontMatch": "La contraseña y la confirmación no coinciden",
+      "placeholder": "Ingresá una contraseña nueva",
+      "placeholderConfirmation": "Confirmá tu contraseña"
+    },
+    "createPassword": {
+      "textPasswordNotSet": "Cifrá la base de datos de la app con una contraseña. Tendrás que ingresarla cada vez que se inicie la app.",
+      "textPasswordSet": "La protección con contraseña y el cifrado de la base de datos están activados",
+      "title": "Contraseña de la app"
+    },
+    "deleteDataDialog": {
+      "confirm": "Sí, confirmo",
+      "text": "¿Confirmás que querés eliminar todos tus datos de forma permanente?",
+      "title": "¿Confirmás esta acción?"
+    },
+    "forgotPasswordDialog": {
+      "cancel": "Cancelar",
+      "confirm": "Sí, eliminar todos mis datos",
+      "text": "Si olvidaste tu contraseña, lamentablemente no podemos recuperar tus datos porque están cifrados con una contraseña que solo vos conocés. Sin embargo, podés eliminar todos los datos cifrados y empezar de nuevo. Una vez que se borren, podés crear otra contraseña en los ajustes si querés.",
+      "title": "¿Olvidaste tu contraseña?"
+    },
+    "incorrectPasswordDialog": {
+      "text": "La contraseña es incorrecta.",
+      "title": "Contraseña incorrecta",
+      "tryAgain": "Volver a intentar"
+    },
+    "unlockApp": {
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "placeholder": "Ingresá la contraseña acá",
+      "title": "Desbloquear la app"
+    }
+  },
+  "shared": {
+    "cancel": "Cancelar",
+    "confirmToProceed": "Confirmar para continuar",
+    "date": "Fecha",
+    "day_one": "{{count}} día",
+    "day_other": "{{count}} días",
+    "error": "Se produjo un error",
+    "ok": "Aceptar",
+    "tryAgain": "Volver a intentar"
+  },
+  "sideMenu": {
+    "about": {
+      "credits": {
+        "madeBy": "Hecha por:",
+        "text": "Queremos mucho al equipo de drip. Gracias y mucho <3 para quienes contribuyen con el proyecto. Gracias a Paula Härtel por los íconos del registro de síntomas. Los demás íconos provienen de:",
+        "title": "Créditos"
+      },
+      "donate": {
+        "button": "Doná acá",
+        "text": "El equipo de drip desarrolla esta app de manera voluntaria y siempre agradece el apoyo. Podés contribuir con el código, enviar comentarios, sugerir mejoras o funciones, hacer pruebas o donar. Todo aporte nos ayuda y motiva a mantener la app y desarrollar nuevas funciones. ¡Gracias por tu apoyo!",
+        "title": "Apoyanos"
+      },
+      "intro": {
+        "contact": "\nSi tu problema no figura en la lista, escribinos por correo electrónico. También podés contribuir con el código en GitLab y visitar nuestro sitio web.",
+        "faq": "Preguntas frecuentes",
+        "text": "Tené en cuenta que tus datos se guardan de forma local en tu teléfono, no en un servidor. Por eso, nadie puede leerlos a menos que tenga acceso a tu teléfono. Queremos que mantengas el control de tus propios datos. Si pensás cambiar o restablecer tu teléfono, acordate de exportar tus datos antes. Después podés volver a instalar la app e importarlos.\n\nSi tenés algún problema, consultá nuestra página de preguntas frecuentes."
+      },
+      "philosophy": {
+        "text": "drip hace predicciones sobre tu menstruación y te ayuda a aplicar el método sintotérmico para conocer tu fertilidad. Pero recordá que esta app está hecha por personas, y las personas podemos equivocarnos. Pensá siempre por tu cuenta: \"¿Esto tiene sentido?\" ¡No necesitás una app para entender tu ciclo! Aun así, drip quiere acompañarte y hacer que el registro de tu menstruación sea más fácil, transparente y seguro.",
+        "title": "Recordá pensar por tu cuenta"
+      },
+      "title": "Acerca de",
+      "version": {
+        "title": "Versión"
+      }
+    },
+    "info": {
+      "title": "información"
+    },
+    "license": {
+      "text": "Copyright (C) {{currentYear}} Heart of Code e.V.\n\nEste programa se distribuye con la intención de que sea útil, pero SIN NINGUNA GARANTÍA, ni siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consultá la Licencia Pública General de GNU para obtener más detalles:",
+      "title": "drip. una app de código abierto para registrar el ciclo"
+    },
+    "menuItems": {
+      "about": "Acerca de",
+      "license": "Licencia",
+      "privacyPolicy": "Política de privacidad",
+      "settings": "Ajustes"
+    },
+    "privacyPolicy": {
+      "dataUse": {
+        "text": "drip. respeta y celebra tu privacidad. No recopila datos de uso ni información personal, y no incluye publicidad ni programas espía. drip. puede guardar localmente en tu dispositivo datos relacionados con la salud menstrual.\n\nEsto incluye:\n• ajustes\n• datos del registro del ciclo menstrual\n\nLos datos se usan para mostrar estadísticas y aplicar reglas de conocimiento de la fertilidad. Otras apps no pueden acceder a ellos.\n\nSi querés eliminar todos los datos de la app, andá a Ajustes, Datos y Eliminar datos de la app. También podés eliminarlos desinstalando la app.",
+        "title": "Uso de los datos"
+      },
+      "intro": {
+        "text": "Esta Política de privacidad explica cómo la app drip. usa y protege los datos personales que generás y guardás en ella.",
+        "title": "Introducción"
+      },
+      "permissions": {
+        "text": "Para usar los recordatorios de drip, tenés que permitir las notificaciones push. Si no querés usar esta función, simplemente no habilites las notificaciones de la app.",
+        "title": "Permisos"
+      },
+      "title": "Política de privacidad",
+      "transparency": {
+        "text": "Podés leer el código fuente de drip. para comprobar que esta información es correcta. El código fuente es como una receta: indica qué ingredientes necesitás, en qué cantidad y cómo prepararlos para cocinar algo rico o programar una app divertida.\n\nBuon appetito!",
+        "title": "Transparencia"
+      }
+    },
+    "settings": {
+      "customization": {
+        "fertilityPhases": {
+          "description": "Si ingresás datos de sangrado menstrual, temperatura y moco cervical o cuello uterino de acuerdo con el método sintotérmico, drip calculará las fases del ciclo con esos datos.",
+          "disabledModal": {
+            "description": "Para usar el cálculo de las fases de fertilidad, activá el registro de temperatura y también el registro del moco cervical o del cuello uterino arriba.",
+            "title": "Desactivado"
+          },
+          "off": "Si activás esta opción, drip mostrará información relacionada con la fertilidad.",
+          "on": "Si desactivás esta opción, drip dejará de mostrar información relacionada con la fertilidad.",
+          "title": "Cálculo de las fases de fertilidad"
+        },
+        "infertileDaysInfo": {
+          "note": "drip aplica el método sintotérmico para calcular los días infértiles al comienzo del ciclo (consultá <0>{{urlText}}</0> para obtener más información). Sin embargo, actualmente drip no aplica la llamada regla de los 20 días, que determina los días infértiles al comienzo del ciclo a partir de la duración de ciclos anteriores cuando no hay información sintotérmica previa.",
+          "title": "Días infértiles al comienzo del ciclo"
+        },
+        "periodPrediction": {
+          "off": "No se muestran predicciones de los ciclos menstruales. Si activás esta opción, aparecerán predicciones de la menstruación en el calendario y la pantalla de inicio.",
+          "on": "drip usa estadísticas para predecir el comienzo de tus próximos 3 sangrados menstruales si antes registraste al menos 3 ciclos completos.",
+          "title": "Predicciones de la menstruación"
+        },
+        "secondarySymptom": {
+          "alert": {
+            "textFertilityTrackingDisabled": "Para definir un síntoma secundario, primero activá la categoría de registro del moco cervical o del cuello uterino, además de la temperatura y el cálculo de las fases de fertilidad arriba.",
+            "textMissingSecondarySymptoms": "Para cambiar el síntoma secundario, primero tenés que activar arriba tanto el moco cervical como el cuello uterino.",
+            "title": "Desactivado"
+          },
+          "text": "Elegí el síntoma secundario que prefieras para detectar la fertilidad según el método sintotérmico:",
+          "title": "Síntoma secundario"
+        },
+        "temperatureScale": {
+          "description": "Cambiá los valores mínimo y máximo del gráfico de temperatura.",
+          "disabled": {
+            "description": "Para usar la escala de temperatura, primero activá arriba el registro de temperatura.",
+            "title": "Desactivado"
+          },
+          "saveError": "No se pudo guardar la configuración de la escala de temperatura",
+          "title": "Escala de temperatura"
+        },
+        "title": "Personalización",
+        "titleSymptoThermalMethod": "Ajustes del método sintotérmico",
+        "trackingCategories": {
+          "title": "Categorías de registro"
+        }
+      },
+      "data": {
+        "delete": {
+          "dialog": {
+            "cancel": "Cancelar",
+            "confirm": "Eliminar los datos de la app de forma permanente",
+            "message": "Tené en cuenta que eliminar los datos de la app es una acción permanente e irreversible. Te recomendamos exportar los datos existentes antes de eliminarlos.",
+            "title": "¿Querés eliminar de este teléfono los datos de la app?"
+          },
+          "error": {
+            "delete": "No se pudieron eliminar los datos",
+            "noData": "No hay datos para eliminar"
+          },
+          "subTitle": "Eliminar de este teléfono los datos de la app",
+          "success": {
+            "message": "Los datos de la app se eliminaron correctamente"
+          },
+          "title": "Eliminar datos de la app"
+        },
+        "export": {
+          "button": "Exportar datos",
+          "error": {
+            "conversionFailed": "No se pudieron convertir los datos a CSV",
+            "noData": "No hay datos para exportar",
+            "sharingFailed": "Hubo un problema al compartir el archivo de exportación de datos"
+          },
+          "text": "Exportá los datos en formato CSV para hacer una copia de seguridad o darles otro uso",
+          "title": "Exportación de mis datos de drip"
+        },
+        "import": {
+          "button": "Importar datos",
+          "dialog": {
+            "cancel": "Cancelar",
+            "delete": "Importar y eliminar los existentes",
+            "message": "Hay dos opciones para la importación:\n\n1. Conservar los días del ciclo existentes y reemplazar solo los que figuran en el archivo de importación.\n\n2. Eliminar todos los días del ciclo existentes e importar los del archivo",
+            "replace": "Importar y reemplazar",
+            "title": "¿Conservar los datos existentes?"
+          },
+          "error": {
+            "couldNotOpenFile": "No se pudo abrir el archivo",
+            "futureEdit": "Las fechas futuras solo pueden contener una nota, no otros síntomas",
+            "incorrectColumns": "Los títulos esperados para las columnas del CSV son {{incorrectColumns}}",
+            "noDataImported": "{{message}}\n\nNo se importó ni modificó ningún dato"
+          },
+          "segmentExplainer": "Importá datos en formato CSV",
+          "success": {
+            "message": "Los datos se importaron correctamente",
+            "title": "Listo"
+          }
+        }
+      },
+      "language": {
+        "languages": {
+          "de-DE": "Alemán",
+          "en-US": "Inglés",
+          "es-ES": "Español"
+        },
+        "title": "Idioma"
+      },
+      "menuItem": {
+        "customization": {
+          "name": "Personalización",
+          "text": "Definí cómo querés usar drip"
+        },
+        "dataManagement": {
+          "name": "Datos",
+          "text": "Importá, exportá o eliminá tus datos"
+        },
+        "info": {
+          "name": "Información",
+          "text": "Conocé más sobre cómo funciona drip"
+        },
+        "language": {
+          "name": "Idioma",
+          "text": "Cambiá el idioma de la app"
+        },
+        "password": {
+          "name": "Contraseña",
+          "text": "Creá, modificá o eliminá tu contraseña"
+        },
+        "reminders": {
+          "name": "Recordatorios",
+          "text": "Activá o desactivá los recordatorios"
+        },
+        "partner": {
+          "name": "Pareja",
+          "text": "Compartí tu calendario con tu pareja de forma cifrada"
+        }
+      },
+      "reminders": {
+        "periodReminder": {
+          "alert": {
+            "text": "Para usar el recordatorio de la menstruación, primero activá las predicciones en los ajustes de personalización.",
+            "title": "Predicciones de la menstruación desactivadas"
+          },
+          "notification": "Es probable que tu próxima menstruación empiece dentro de {{advanceNoticeDays}} a {{daysToEndOfPrediction}} días.",
+          "reminderText": "Recordatorio configurado para $t(shared.day) antes del comienzo probable de tu próxima menstruación.",
+          "reminderTextDisabled": "Configurá un recordatorio para antes del comienzo probable de tu próxima menstruación.",
+          "title": "Recordatorio de la próxima menstruación"
+        },
+        "temperatureReminder": {
+          "alert": {
+            "text": "Para usar el recordatorio de temperatura, primero activá la categoría de registro de temperatura en los ajustes de personalización.",
+            "title": "Registro de temperatura desactivado"
+          },
+          "noTimeSet": "Elegí una hora para el recordatorio diario de tomarte la temperatura",
+          "notification": "Registrá tu temperatura de la mañana",
+          "timeSet": "Recordatorio diario configurado para las {{time}}",
+          "title": "Recordatorio de temperatura"
+        }
+      },
+      "title": "Ajustes",
+      "partner": {
+        "title": "Pareja",
+        "intro": "Vinculá tu app con la de tu pareja para compartir una vista de solo lectura de tu calendario, con cifrado de extremo a extremo. Todos los cálculos se realizan en tu dispositivo.",
+        "myIdentity": "1. Mi invitación",
+        "identityReady": "Tu invitación (compartila con tu pareja):",
+        "generateIdentity": "Generar mi invitación",
+        "pairTitle": "2. Vincular con mi pareja",
+        "pairedWith": "Vinculación con:",
+        "pairHint": "Pegá acá el código de invitación de tu pareja:",
+        "peerInvitePlaceholder": "Código de invitación de mi pareja...",
+        "pairButton": "Vincular",
+        "receiveTitle": "3. Recibir calendario",
+        "receiveHint": "Pegá el bloque cifrado del calendario que recibiste:",
+        "blobPlaceholder": "Bloque cifrado...",
+        "decryptButton": "Descifrar y analizar",
+        "insightsTitle": "Información para vos",
+        "daysTracked": "días registrados",
+        "noInsights": "Todavía no hay datos suficientes para calcular patrones personales.",
+        "error": "Se produjo un error",
+        "noSecret": "Primero tenés que completar la vinculación (paso 2).",
+        "shareMyCalendar": "Compartir mi calendario de forma cifrada",
+        "demoE2E": "Demostración E2E: cargar y descifrar el bloque de prueba",
+        "syncTitle": "Sincronización automática (retransmisión con cifrado de extremo a extremo)",
+        "syncIntro": "Configurá la URL de retransmisión (por ejemplo, http://192.168.1.10:8099). La sincronización carga tu calendario cifrado cada 30 segundos y descarga el de tu pareja.",
+        "syncStart": "Iniciar sincronización automática",
+        "syncStop": "Detener sincronización",
+        "syncActive": "Sincronización automática activa (30 s)",
+        "syncStopped": "Sincronización detenida",
+        "blobReceived": "Se recibió un bloque nuevo",
+        "relayUrlFirst": "Primero configurá la URL de retransmisión (por ejemplo, http://192.168.1.10:8099)",
+        "noDataYet": "Todavía no hay datos en la app. Registrá al menos un día.",
+        "encryptedReady": "Contenido cifrado: {n} días. Copialo y envíaselo a tu pareja.",
+        "peerFromFile": "Primero generá tu invitación (paso 1)."
+      }
+    }
+  },
+  "stats": {
+    "details": {
+      "bleedingDays": "Sangrado",
+      "cycleLength": "Duración del ciclo",
+      "cycleStart": "Inicio del ciclo"
+    },
+    "footnote": "A partir de la desviación estándar de la duración de todos los ciclos que registraste, drip calcula un intervalo para el día de inicio de los próximos 3 ciclos. El intervalo es de 3 días si la desviación estándar es menor que 1,5 y de 5 días si es mayor que 1,5.\n\nLa desviación estándar indica cuánto varía la duración de tus ciclos. Un valor de 0 significa que todos duran exactamente lo mismo. Cuanto mayor sea el valor, más variará la duración.",
+    "intro": "Estadísticas básicas sobre la duración de tus ciclos.",
+    "noData": "Se necesita al menos un ciclo completo para mostrar las estadísticas.",
+    "overview": {
+      "average": "Ciclo promedio",
+      "completedCycles": "ciclos\ncompletos",
+      "days": "días",
+      "max": "Más largo",
+      "min": "Más corto",
+      "standardDeviation": "Desviación\nestándar"
+    },
+    "showStats": "Mostrar detalles de la menstruación"
+  },
+  "symptoms": {
+    "bleeding": "sangrado",
+    "cervix": "cuello uterino",
+    "desire": "deseo",
+    "mood": "estado de ánimo",
+    "mucus": "moco cervical",
+    "note": "nota",
+    "pain": "dolor",
+    "sex": "actividad sexual",
+    "temperature": "temperatura"
+  }
+}

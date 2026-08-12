@@ -128,7 +128,7 @@ const Partner = () => {
       let effectivePeer = peer
       if (!secret) {
         if (!identity) {
-          Alert.alert(t('error'), 'Primero generá tu invite (paso 1)')
+          Alert.alert(t('error'), t('peerFromFile'))
           return
         }
         const peerFile = `${RNFS.DocumentDirectoryPath}/peer.txt`
@@ -174,7 +174,7 @@ const Partner = () => {
   const handleShareMyCalendar = async () => {
     try {
       if (!identity) {
-        Alert.alert(t('error'), 'Primero generá tu invite (paso 1)')
+        Alert.alert(t('error'), t('peerFromFile'))
         return
       }
       let secret = sharedSecret
@@ -191,7 +191,7 @@ const Partner = () => {
       const rawStarts = getCycleStartsSortedByDate().map(mapRealmObjToJsObj)
       const cycleStarts = rawStarts.map((d) => d.date)
       if (rawDays.length === 0) {
-        Alert.alert(t('error'), 'No hay datos en la app todavía. Registrá al menos un día.')
+        Alert.alert(t('error'), t('noDataYet'))
         return
       }
       const payload = buildSharePayload({
@@ -202,7 +202,7 @@ const Partner = () => {
       })
       const blob = encryptForPartner(secret, JSON.stringify(payload))
       setMyEncryptedBlob(blob)
-      Alert.alert('Listo', `Payload cifrado: ${payload.cycleDays.length} días. Copialo y mandáselo a tu pareja.`)
+      Alert.alert('OK', t('encryptedReady', { n: payload.cycleDays.length }))
     } catch (e) {
       Alert.alert(t('error'), e.message)
     }
@@ -239,7 +239,7 @@ const Partner = () => {
       }
       const base = relayUrl.trim()
       if (!base) {
-        Alert.alert(t('error'), 'Configurá la URL del relay primero (ej. http://192.168.1.10:8099)')
+        Alert.alert(t('error'), t('relayUrlFirst'))
         return
       }
       if (syncRef.current) syncRef.current.stop()
@@ -256,7 +256,7 @@ const Partner = () => {
         onReceivedBlob: async (blob) => {
           try {
             await applyReceivedBlob(blob)
-            setSyncStatus('Blob nuevo recibido ✓')
+            setSyncStatus(t('blobReceived') + ' ✓')
           } catch (e) {
             setSyncStatus(`Error al descifrar: ${e.message}`)
           }
@@ -269,7 +269,7 @@ const Partner = () => {
       })
       syncRef.current = motor
       motor.start()
-      setSyncStatus('Sync automático activo (30s)')
+      setSyncStatus(t('syncActive'))
     } catch (e) {
       Alert.alert(t('error'), e.message)
     }
@@ -279,7 +279,7 @@ const Partner = () => {
     if (syncRef.current) {
       syncRef.current.stop()
       syncRef.current = null
-      setSyncStatus('Sync detenido')
+      setSyncStatus(t('syncStopped'))
     }
   }
 
@@ -332,7 +332,7 @@ const Partner = () => {
         {peer && (
           <>
             <Button isCTA onPress={handleShareMyCalendar} style={styles.button}>
-              Compartir mi calendario (cifrado)
+              {t('shareMyCalendar')}
             </Button>
             {!!myEncryptedBlob && (
               <AppText style={styles.mono}>{myEncryptedBlob}</AppText>
@@ -346,7 +346,7 @@ const Partner = () => {
         <AppText style={styles.sectionTitle}>{t('receiveTitle')}</AppText>
         <AppText>{t('receiveHint')}</AppText>
         <Button isCTA onPress={handleLoadDemoBlob} style={styles.button}>
-          Demo E2E: cargar + descifrar blob de prueba
+          {t('demoE2E')}
         </Button>
         <AppTextInput
           multiline
@@ -363,10 +363,9 @@ const Partner = () => {
       {/* 4. Sync automático */}
       {peer && (
         <Segment>
-          <AppText style={styles.sectionTitle}>Sync automático (relay E2EE)</AppText>
+          <AppText style={styles.sectionTitle}>{t('syncTitle')}</AppText>
           <AppText>
-            Configurá la URL del relay (ej. http://192.168.1.10:8099). El sync
-            sube tu calendario cifrado cada 30s y baja el de tu pareja.
+            {t('syncIntro')}
           </AppText>
           <AppTextInput
             autoCapitalize="none"
@@ -380,10 +379,10 @@ const Partner = () => {
             value={relayUrl}
           />
           <Button isCTA onPress={handleStartSync} style={styles.button}>
-            Activar sync automático
+            {t('syncStart')}
           </Button>
           <Button onPress={handleStopSync} style={styles.button}>
-            Detener sync
+            {t('syncStop')}
           </Button>
           {!!syncStatus && <AppText style={styles.syncStatus}>{syncStatus}</AppText>}
         </Segment>

@@ -467,7 +467,8 @@
       "language": {
         "languages": {
           "de-DE": "German",
-          "en-US": "English"
+          "en-US": "English",
+          "es-ES": "Spanish"
         },
         "title": "Language"
       },
@@ -543,7 +544,20 @@
         "daysTracked": "days tracked",
         "noInsights": "Not enough data yet to compute personal patterns.",
         "error": "Error",
-        "noSecret": "You need to pair first (step 2)."
+        "noSecret": "You need to pair first (step 2).",
+        "shareMyCalendar": "Share my calendar (encrypted)",
+        "demoE2E": "Demo E2E: load + decrypt test blob",
+        "syncTitle": "Auto sync (E2EE relay)",
+        "syncIntro": "Set the relay URL (e.g. http://192.168.1.10:8099). Sync uploads your encrypted calendar every 30s and downloads your partner's.",
+        "syncStart": "Start auto sync",
+        "syncStop": "Stop sync",
+        "syncActive": "Auto sync active (30s)",
+        "syncStopped": "Sync stopped",
+        "blobReceived": "New blob received",
+        "relayUrlFirst": "Set the relay URL first (e.g. http://192.168.1.10:8099)",
+        "noDataYet": "No data in the app yet. Track at least one day.",
+        "encryptedReady": "Encrypted payload: {n} days. Copy it and send it to your partner.",
+        "peerFromFile": "First generate your invite (step 1)"
       }
     }
   },

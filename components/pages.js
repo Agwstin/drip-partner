@@ -61,6 +61,14 @@ export const pages = [
     parent: 'SettingsMenu',
   },
   {
+    component: 'Language',
+    parent: 'SettingsMenu',
+  },
+  {
+    component: 'Partner',
+    parent: 'SettingsMenu',
+  },
+  {
     component: 'CycleDay',
     parent: 'Home',
   },
