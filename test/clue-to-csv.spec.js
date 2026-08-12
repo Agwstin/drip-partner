@@ -79,6 +79,35 @@ describe('clue-to-csv', () => {
     expect(day1Cols[painCrampsIdx]).toBe('true')
   })
 
+  test('spotting NO sobrescribe period del mismo día (bug datos reales)', () => {
+    const fixture = JSON.stringify([
+      { date: '2026-07-21', type: 'period', value: { option: 'medium' } },
+      { date: '2026-07-21', type: 'spotting', value: [{ option: 'red' }] },
+    ])
+    const entries = clueToObjects(fixture)
+    expect(entries).toHaveLength(1)
+    expect(entries[0].bleedingValue).toBe(2) // medium (period gana)
+    expect(entries[0].bleedingExclude).toBe(false)
+  })
+
+  test('spotting sin period marca excluido', () => {
+    const fixture = JSON.stringify([
+      { date: '2026-07-30', type: 'spotting', value: [{ option: 'red' }] },
+    ])
+    const entries = clueToObjects(fixture)
+    expect(entries[0].bleedingValue).toBe(0)
+    expect(entries[0].bleedingExclude).toBe(true)
+  })
+
+  test('sleep_duration con value objeto no rompe la conversion', () => {
+    const fixture = JSON.stringify([
+      { date: '2026-07-22', type: 'sleep_duration', value: { minutes: 480 } },
+    ])
+    const entries = clueToObjects(fixture)
+    expect(entries).toHaveLength(1)
+    expect(entries[0].noteValue).toContain('[sleep: 8h]')
+  })
+
   test('clueJsonToCsv roundtrip completo', () => {
     const csv = clueJsonToCsv(clueFixture)
     expect(csv.split('\n')[0]).toContain('date,')
