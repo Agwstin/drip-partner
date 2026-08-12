@@ -49,7 +49,7 @@ const Home = ({ navigate, setDate }) => {
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
-      <AppText style={styles.title}>{moment().format('MMM Do YYYY')}</AppText>
+      <AppText style={styles.title}>{moment().format('LL')}</AppText>
 
       {/* display if at least 1 bleeding day has been entered */}
       {cycleDayNumber && (
