@@ -6,7 +6,7 @@ import {
   encryptForPartner,
   decryptFromPartner,
 } from '../lib/partner-pairing'
-import { encodeBase64, decodeBase64, utf8Encode } from '../lib/partner-codec'
+import { encodeBase64, decodeBase64, utf8Encode, utf8Decode } from '../lib/partner-codec'
 
 describe('partner-pairing', () => {
   test('genera identidades con claves de largo correcto', () => {
@@ -32,6 +32,18 @@ describe('partner-pairing', () => {
     expect(() =>
       parseInvite(encodeBase64(utf8Encode(JSON.stringify({ v: 1, type: 'drip-partner-invite' }))))
     ).toThrow()
+  })
+
+  test('parseInvite rechaza invites con id adulterado (no coincide con pub)', () => {
+    const id = generatePairingIdentity()
+    const invite = buildInvite(id, 'Cami')
+    const parsed = parseInvite(invite)
+    // alterar el id sin tocar la clave pública -> debe fallar
+    const payload = JSON.parse(utf8Decode(decodeBase64(invite)))
+    payload.id = 'deadbeefdeadbeef'
+    const forged = encodeBase64(utf8Encode(JSON.stringify(payload)))
+    expect(() => parseInvite(forged)).toThrow(/no corresponde/)
+    expect(parsed.id).toBe(id.pairingId)
   })
 
   test('deriveSharedSecret produce el mismo secreto en ambos lados', () => {

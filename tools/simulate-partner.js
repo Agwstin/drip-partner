@@ -65,7 +65,8 @@ async function main() {
   const shared = deriveSharedSecret(partner.secretKeyB64, person.publicKeyB64)
   console.log('Secreto compartido derivado OK')
 
-  // 4. Payload de ejemplo: 3 ciclos con patrón de dolor día 1-2 y ánimo bajo post-ovu
+  // 4. Payload de ejemplo: 3 ciclos con patrón de dolor día 1-2 y ánimo bajo post-ovu,
+  //    usando la FORMA REAL de los CycleDay de drip (Realm): booleans por síntoma
   const cycleDays = []
   const starts = ['2025-01-01', '2025-01-29', '2025-02-26']
   for (let c = 0; c < starts.length; c++) {
@@ -76,15 +77,19 @@ async function main() {
       const iso = date.toISOString().slice(0, 10)
       const dayOfCycle = d + 1
       const day = { date: iso }
-      if (dayOfCycle <= 5) {
-        day.bleeding = { value: dayOfCycle <= 2 ? 3 : 2 }
-        day.pain = { value: dayOfCycle <= 2 ? 3 : 1 }
-        day.mood = { value: dayOfCycle <= 2 ? 2 : 3 }
+      if (dayOfCycle <= 2) {
+        day.bleeding = { value: 3 }
+        day.pain = { cramps: true, headache: true }
+        day.mood = { sad: true, fatigue: true }
+      } else if (dayOfCycle <= 5) {
+        day.bleeding = { value: 2 }
+        day.pain = { cramps: true }
+        day.mood = { fine: true }
       } else if (dayOfCycle >= 20) {
-        day.mood = { value: 2 }
-        day.pain = { value: 1 }
+        day.mood = { sad: true, stressed: true }
+        day.pain = { cramps: true }
       } else {
-        day.mood = { value: 4 }
+        day.mood = { happy: true }
       }
       if (dayOfCycle % 3 === 0) day.desire = { value: 2 }
       cycleDays.push(day)

@@ -18,15 +18,19 @@ function makeCycleDays() {
       const iso = date.toISOString().slice(0, 10)
       const dayOfCycle = d + 1
       const day = { date: iso }
-      if (dayOfCycle <= 5) {
-        day.bleeding = { value: dayOfCycle <= 2 ? 3 : 2 }
-        day.pain = { value: dayOfCycle <= 2 ? 3 : 1 }
-        day.mood = { value: dayOfCycle <= 2 ? 2 : 3 }
+      if (dayOfCycle <= 2) {
+        day.bleeding = { value: 3 }
+        day.pain = { cramps: true, headache: true }
+        day.mood = { sad: true, fatigue: true }
+      } else if (dayOfCycle <= 5) {
+        day.bleeding = { value: 2 }
+        day.pain = { cramps: true }
+        day.mood = { fine: true }
       } else if (dayOfCycle >= 20) {
-        day.mood = { value: 2 }
-        day.pain = { value: 1 }
+        day.mood = { sad: true, stressed: true }
+        day.pain = { cramps: true }
       } else {
-        day.mood = { value: 4 }
+        day.mood = { happy: true }
       }
       if (dayOfCycle % 3 === 0) day.desire = { value: 2 }
       days.push(day)
@@ -86,16 +90,8 @@ describe('partner-share', () => {
     expect(received.cycleDays.length).toBe(payload.cycleDays.length)
 
     // pareja corre el motor de inferencia sobre los datos recibidos
-    const cycles = normalizeCycles(
-      received.cycleDays.map((d) => ({
-        ...d,
-        mood: d.mood !== undefined ? { value: d.mood } : undefined,
-        pain: d.pain !== undefined ? { value: d.pain } : undefined,
-        desire: d.desire !== undefined ? { value: d.desire } : undefined,
-        bleeding: d.bleeding !== undefined ? { value: d.bleeding } : undefined,
-      })),
-      received.cycleStarts
-    )
+    // (normalizeCycles acepta la forma REAL de Realm: booleans por síntoma)
+    const cycles = normalizeCycles(received.cycleDays, received.cycleStarts)
     const insights = generateInsights(
       phaseProfiles(cycles),
       symptomCorrelations(cycles),

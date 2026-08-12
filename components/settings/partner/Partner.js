@@ -11,7 +11,7 @@ import Segment from '../../common/segment'
 import { Colors, Spacing } from '../../../styles'
 import { useTranslation } from 'react-i18next'
 
-import { generatePairingIdentity, buildInvite, parseInvite, deriveSharedSecret } from '../../../lib/partner-pairing'
+import { generatePairingIdentity, buildInvite, parseInvite, deriveSharedSecret, encryptForPartner } from '../../../lib/partner-pairing'
 import { decryptFromPartner } from '../../../lib/partner-pairing'
 import {
   partnerIdentityObservable,
@@ -23,6 +23,8 @@ import {
   savePartnerBlob,
 } from '../../../lib/partner-storage'
 import { normalizeCycles, phaseProfiles, symptomCorrelations, worstSymptomDays, generateInsights } from '../../../lib/partner-insights'
+import { buildSharePayload } from '../../../lib/partner-share'
+import { getCycleDaysSortedByDate, getCycleStartsSortedByDate, mapRealmObjToJsObj } from '../../../db'
 
 /**
  * Partner view: pairing + calendario compartido de la pareja.
@@ -43,6 +45,7 @@ const Partner = () => {
   const [insights, setInsights] = useState([])
   const [sharedSecret, setSharedSecret] = useState(null)
   const [decryptedPayload, setDecryptedPayload] = useState(null)
+  const [myEncryptedBlob, setMyEncryptedBlob] = useState('')
 
   useEffect(() => {
     initPartnerStorage()
@@ -89,16 +92,7 @@ const Partner = () => {
       setDecryptedPayload(payload)
 
       // correr el motor de inferencia sobre los datos recibidos
-      const cycles = normalizeCycles(
-        payload.cycleDays.map((d) => ({
-          ...d,
-          mood: d.mood !== undefined ? { value: d.mood } : undefined,
-          pain: d.pain !== undefined ? { value: d.pain } : undefined,
-          desire: d.desire !== undefined ? { value: d.desire } : undefined,
-          bleeding: d.bleeding !== undefined ? { value: d.bleeding } : undefined,
-        })),
-        payload.cycleStarts
-      )
+      const cycles = normalizeCycles(payload.cycleDays, payload.cycleStarts)
       const found = generateInsights(
         phaseProfiles(cycles),
         symptomCorrelations(cycles),
@@ -152,16 +146,8 @@ const Partner = () => {
       const payload = JSON.parse(plaintext)
       await savePartnerBlob({ encrypted: content.trim(), receivedAt: new Date().toISOString() })
       setDecryptedPayload(payload)
-      const cycles = normalizeCycles(
-        payload.cycleDays.map((d) => ({
-          ...d,
-          mood: d.mood !== undefined ? { value: d.mood } : undefined,
-          pain: d.pain !== undefined ? { value: d.pain } : undefined,
-          desire: d.desire !== undefined ? { value: d.desire } : undefined,
-          bleeding: d.bleeding !== undefined ? { value: d.bleeding } : undefined,
-        })),
-        payload.cycleStarts
-      )
+      // normalizeCycles acepta la forma REAL de Realm: booleans por síntoma
+      const cycles = normalizeCycles(payload.cycleDays, payload.cycleStarts)
       const found = generateInsights(
         phaseProfiles(cycles),
         symptomCorrelations(cycles),
@@ -169,6 +155,47 @@ const Partner = () => {
       )
       setInsights(found)
       Alert.alert('E2E OK', `Blob descifrado: ${payload.cycleDays.length} días, ${found.length} insights`)
+    } catch (e) {
+      Alert.alert(t('error'), e.message)
+    }
+  }
+
+  /**
+   * MITAD EMISORA: arma el payload con los datos REALES de la DB de drip,
+   * lo cifra para la pareja y lo muestra para compartir.
+   */
+  const handleShareMyCalendar = async () => {
+    try {
+      if (!identity) {
+        Alert.alert(t('error'), 'Primero generá tu invite (paso 1)')
+        return
+      }
+      let secret = sharedSecret
+      const effectivePeer = peer
+      if (!secret && effectivePeer) {
+        secret = deriveSharedSecret(identity.secretKeyB64, effectivePeer.publicKeyB64)
+        setSharedSecret(secret)
+      }
+      if (!secret) {
+        Alert.alert(t('error'), t('noSecret'))
+        return
+      }
+      const rawDays = getCycleDaysSortedByDate().map(mapRealmObjToJsObj)
+      const rawStarts = getCycleStartsSortedByDate().map(mapRealmObjToJsObj)
+      const cycleStarts = rawStarts.map((d) => d.date)
+      if (rawDays.length === 0) {
+        Alert.alert(t('error'), 'No hay datos en la app todavía. Registrá al menos un día.')
+        return
+      }
+      const payload = buildSharePayload({
+        cycleDays: rawDays,
+        cycleStarts,
+        partnerName: effectivePeer ? effectivePeer.name : 'mi pareja',
+        options: { includeBleeding: true },
+      })
+      const blob = encryptForPartner(secret, JSON.stringify(payload))
+      setMyEncryptedBlob(blob)
+      Alert.alert('Listo', `Payload cifrado: ${payload.cycleDays.length} días. Copialo y mandáselo a tu pareja.`)
     } catch (e) {
       Alert.alert(t('error'), e.message)
     }
@@ -218,6 +245,16 @@ const Partner = () => {
             <Button isCTA onPress={handlePair} style={styles.button}>
               {t('pairButton')}
             </Button>
+          </>
+        )}
+        {peer && (
+          <>
+            <Button isCTA onPress={handleShareMyCalendar} style={styles.button}>
+              Compartir mi calendario (cifrado)
+            </Button>
+            {!!myEncryptedBlob && (
+              <AppText style={styles.mono}>{myEncryptedBlob}</AppText>
+            )}
           </>
         )}
       </Segment>
